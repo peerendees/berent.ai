@@ -6,6 +6,7 @@ const FILES_TO_CACHE = [
   'vortraege.html',
   'impressum.html',
   'profil.html',
+  'datenschutz.html',
   // Fallback-Seite (optional, falls eine Seite offline nicht im Cache ist)
   // 'offline.html',
   // CSS
