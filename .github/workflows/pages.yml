@@ -32,8 +32,12 @@ jobs:
       - name: Build site
         run: npm run build
         
-      - name: Copy CSS to root
-        run: cp dist/output.css dist/
+      - name: Copy files to dist
+        run: |
+          cp -r images dist/
+          cp -r customer-logos dist/
+          cp *.html dist/
+          cp manifest.json dist/
         
       - name: Setup Pages
         uses: actions/configure-pages@v4
