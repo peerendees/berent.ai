@@ -1,5 +1,5 @@
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
 
@@ -27,6 +27,7 @@ yarn-error.log*
 .idea/
 *.swp
 *.swo
+*~
 
 # OS generated files
 .DS_Store
@@ -35,4 +36,32 @@ yarn-error.log*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# Logs
+*.log
+logs/
+log/
+
+# Sensitive Data
+**/private/
+**/secrets/
+**/*.key
+**/*.pem
+**/*.cert
+**/*.password
+**/*.secret
+
+# Cache
+.cache/
+.npm/
+.eslintcache
+
+# Misc
+*.bak
+*.tmp
+*.temp
+
+# Build/Deploy
+/.next/
+/out/ 
