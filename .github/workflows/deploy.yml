@@ -56,13 +56,13 @@ jobs:
             --title "Release v${{ steps.version.outputs.version }}" \
             --notes "Automatisch generiertes Release"
         
-      - name: Deploy to IONOS via SFTP
-        uses: appleboy/scp-action@v0.1.7
+      - name: SFTP Deploy to IONOS
+        uses: cross-the-world/scp-pipeline@v1.1.0
         with:
           host: ${{ secrets.SFTP_SERVER }}
-          username: ${{ secrets.SFTP_USERNAME }}
-          password: ${{ secrets.SFTP_PASSWORD }}
+          user: ${{ secrets.SFTP_USERNAME }}
+          pass: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          source: "./dist"
-          target: "/"
-          overwrite: true 
+          connect_timeout: 10s
+          local: ./dist/
+          remote: / 
