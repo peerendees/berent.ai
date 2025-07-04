@@ -56,11 +56,12 @@ jobs:
             --title "Release v${{ steps.version.outputs.version }}" \
             --notes "Automatisch generiertes Release"
         
-      - name: Deploy to IONOS
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy to IONOS via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}/ 
+          host: ${{ secrets.SFTP_SERVER }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          source: "./dist/*"
+          target: "/" 
