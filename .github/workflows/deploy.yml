@@ -36,14 +36,22 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: SFTP Deploy to IONOS (verbessert)
-        uses: cross-the-world/scp-pipeline@v1.1.0
+      - name: SFTP Deploy to IONOS (moderne Action)
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SFTP_SERVER }}
-          user: ${{ secrets.SFTP_USERNAME }}
-          pass: ${{ secrets.SFTP_PASSWORD }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
           port: 22
-          connect_timeout: 30s
-          local: ./dist/
-          remote: /
-          debug: true 
+          script: |
+            echo "🚀 SFTP Upload starten..."
+            
+      - name: Upload files via SFTP
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.SFTP_USERNAME }}
+          server: ${{ secrets.SFTP_SERVER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          local_path: './dist/*'
+          remote_path: '/'
+          sftp_only: true 
