@@ -36,27 +36,7 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Generate new version
-        id: version
-        uses: paulhatch/semantic-version@v5.3.0
-        with:
-          tag_prefix: "v"
-          major_pattern: "BREAKING CHANGE:"
-          minor_pattern: "feat:"
-          version_format: "${major}.${minor}.${patch}"
-          bump_each_commit: false
-          change_path: "."
-          enable_prerelease_mode: false
-          
-      - name: Create Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create v${{ steps.version.outputs.version }} \
-            --title "Release v${{ steps.version.outputs.version }}" \
-            --notes "Automatisch generiertes Release"
-        
-      - name: SFTP Deploy to IONOS
+      - name: SFTP Deploy to IONOS (ohne Release)
         uses: cross-the-world/scp-pipeline@v1.1.0
         with:
           host: ${{ secrets.SFTP_SERVER }}
