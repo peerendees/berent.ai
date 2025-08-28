@@ -36,16 +36,14 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Deploy erfolgreich (ohne SFTP)
-        run: |
-          echo "🎉 Build erfolgreich abgeschlossen!"
-          echo "Dateien bereit für Upload:"
-          ls -la dist/
-          echo ""
-          echo "⚠️  SFTP-Upload deaktiviert für Debugging"
-          echo "Dateien müssen manuell hochgeladen werden!"
-          echo ""
-          echo "✅ Deine Schriftgrößen sind bereit:"
-          echo "   📱 Smartphone: 36px"
-          echo "   📱 Tablet: 44px" 
-          echo "   💻 Laptop: 100px" 
+      - name: SFTP Deploy to IONOS (verbessert)
+        uses: cross-the-world/scp-pipeline@v1.1.0
+        with:
+          host: ${{ secrets.SFTP_SERVER }}
+          user: ${{ secrets.SFTP_USERNAME }}
+          pass: ${{ secrets.SFTP_PASSWORD }}
+          port: 22
+          connect_timeout: 30s
+          local: ./dist/
+          remote: /
+          debug: true 
