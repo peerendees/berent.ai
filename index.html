@@ -31,17 +31,17 @@
             line-height: 1.1;
         }
         
-        /* Tablet: 26px ab 768px - kleiner für kompaktere Hero */
-        @media (min-width: 768px) and (max-width: 999px) {
+        /* Tablet: 26px ab 768px - OHNE max-width wie beim Test */
+        @media (min-width: 768px) {
             .hero-title {
-                font-size: 1.625rem !important; /* 26px - reduziert für bessere Viewport-Nutzung */
+                font-size: 1.625rem !important; /* 26px - wie beim funktionierenden Test */
             }
         }
         
-        /* Laptop: 88px ab 1000px - kleiner als vorher */
-        @media (min-width: 1000px) {
+        /* Laptop: 88px ab 1200px - höherer Breakpoint */
+        @media (min-width: 1200px) {
             .hero-title {
-                font-size: 5.5rem; /* 88px - reduziert von 100px */
+                font-size: 5.5rem; /* 88px - jetzt erst ab 1200px */
             }
         }
     </style>
