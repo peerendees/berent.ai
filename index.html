@@ -27,22 +27,10 @@
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
         .hero-title {
-            font-size: 2rem; /* 32px für Smartphone */
+            /* VERLÄSSLICHE Responsive Schrift mit clamp() */
+            font-size: clamp(2rem, 8vw, 6rem) !important;
+            /* Min: 32px, Mittel: 8% der Viewport-Breite, Max: 96px */
             line-height: 1.1;
-        }
-        
-        /* Tablet: 32px ab 768px - finale ideale Größe */
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 2rem !important; /* 32px - finale Tablet-Größe */
-            }
-        }
-        
-        /* Laptop: 88px ab 1200px - höherer Breakpoint */
-        @media (min-width: 1200px) {
-            .hero-title {
-                font-size: 5.5rem; /* 88px - jetzt erst ab 1200px */
-            }
         }
     </style>
 </head>
