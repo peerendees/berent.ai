@@ -1,4 +1,4 @@
-const CACHE_NAME = 'berent-static-cache-v1'; // Version ändern, wenn Dateien aktualisiert werden!
+const CACHE_NAME = 'berent-static-cache-v2'; // Version geändert: Bilder auf WebP umgestellt
 const FILES_TO_CACHE = [
   // HTML-Seiten
   'index.html',
@@ -10,19 +10,20 @@ const FILES_TO_CACHE = [
   // 'offline.html',
   // CSS
   'output.css',
-  // Wichtige Bilder/Logos
-  'images/logo.png',
-  'images/logo-kompakt-farbe.png',
-  'images/hintergrund.png',
-  'images/hintergrund-footer.jpg',
-  'images/kunden-hintergrund.jpg', // Falls verwendet und benötigt
+  // Wichtige Bilder/Logos (WebP)
+  'images/logo.webp',
+  'images/logo_farbe_v3.webp',
+  'images/logo-kompakt-farbe.webp',
+  'images/hintergrund.webp',
+  'images/hintergrund-footer.webp',
+  'images/kunden-hintergrund.jpg', // kein WebP vorhanden, Referenz unverändert
   'customer-logos/logo-nachtwaechter.png',
   'customer-logos/h-pcn.png',
   'customer-logos/logo-future-hair.png',
   'customer-logos/benseler-logo.jpeg',
-  // Icons (aus Manifest)
-  'images/icon-192x192.png',
-  'images/icon-512x512.png',
+  // Icons (aus Manifest, WebP)
+  'images/icon-192x192.webp',
+  'images/icon-512x512.webp',
   // PDFs (falls sie offline verfügbar sein sollen)
   'material/Sieben-Weshalb-fur-den-Einsatz-Kunstlicher-Intelligenz-am-Gymnasium.pdf',
   'material/KI-fur-Lehrkrafte-Weniger-Tool-Wahn-mehr-Zeitgewinn.pdf',
