@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides - BERENT | Beratung + Entwicklung</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="images/logo_farbe_v3.webp" alt="BERENT Logo" class="h-20 mr-2 my-1" width="auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/apps" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Apps</a>
+                    <a href="/guides" class="text-[#D6B366] font-semibold">Guides</a>
+                    <a href="/buch" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Buch</a>
+                    <a href="/profil" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Über mich</a>
+                    <a href="/kontakt" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Kontakt</a>
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Menü öffnen" id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D6B366]">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden bg-white md:hidden shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/apps" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Apps</a>
+                <a href="/guides" class="block px-3 py-2 rounded-md text-base font-medium text-[#D6B366]">Guides</a>
+                <a href="/buch" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Buch</a>
+                <a href="/profil" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Über mich</a>
+                <a href="/kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="pt-32 pb-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4 text-[#80331A]">Guides</h1>
+            <p class="text-gray-600 mb-12 text-lg">Anleitungen und Wissensseiten — praxisnah und verständlich.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Relaunch-Guide -->
+                <a href="https://relaunch-guide.berent.ai" target="_blank" class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl hover:-translate-y-1 transition duration-300 block">
+                    <div class="text-[#D6B366] mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#80331A] mb-2">Webseiten-Relaunch Guide</h3>
+                    <p class="text-gray-600 text-sm">Schritt-für-Schritt-Anleitung für einen erfolgreichen Website-Relaunch.</p>
+                    <span class="inline-block mt-4 text-[#80331A] text-sm font-semibold">Zum Guide →</span>
+                </a>
+
+                <!-- Launch-Guide (Coming Soon) -->
+                <div class="bg-white rounded-lg shadow-lg p-8 opacity-60">
+                    <div class="text-gray-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">Launch-Guide</h3>
+                    <p class="text-gray-400 text-sm">In Planung</p>
+                </div>
+
+                <!-- Claude Hacks (Coming Soon) -->
+                <div class="bg-white rounded-lg shadow-lg p-8 opacity-60">
+                    <div class="text-gray-400 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-400 mb-2">Claude Hacks</h3>
+                    <p class="text-gray-400 text-sm">In Planung</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2026 BERENT | Beratung + Entwicklung</p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <a href="/impressum" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Impressum</a>
+                    <a href="/datenschutz" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Datenschutz</a>
+                    <a href="/showcase" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Projekte</a>
+                    <a href="https://linkedin.com/in/berentai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">LinkedIn</a>
+                    <a href="https://instagram.com/berent.ai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+    </script>
+</body>
+</html>
