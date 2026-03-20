@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datenschutzerklärung - BERENT | Beratung + Entwicklung</title>
+    <!-- Google Fonts: Bebas Neue, Lora, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
     <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
     <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+<body>
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white shadow-lg z-50">
+    <nav class="nav-main fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-3">
                 <div class="flex items-center">
@@ -19,14 +23,22 @@
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/apps" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Apps</a>
-                    <a href="/guides" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Guides</a>
-                    <a href="/buch" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Buch</a>
-                    <a href="/profil" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Über mich</a>
-                    <a href="/kontakt" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Kontakt</a>
+                    <a href="/apps" class="nav-link">Apps</a>
+                    <a href="/guides" class="nav-link">Guides</a>
+                    <a href="/buch" class="nav-link">Buch</a>
+                    <a href="/profil" class="nav-link">Über mich</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema wechseln">
+                        <svg id="icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z"/></svg>
+                        <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                    </button>
                 </div>
-                <div class="md:hidden">
-                    <button aria-label="Menü öffnen" id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D6B366]">
+                <div class="md:hidden flex items-center gap-3">
+                    <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Farbschema wechseln">
+                        <svg class="icon-moon-m w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z"/></svg>
+                        <svg class="icon-sun-m w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                    </button>
+                    <button aria-label="Menü öffnen" id="mobile-menu-button" style="color: var(--text-muted);">
                         <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
@@ -34,13 +46,13 @@
                 </div>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden bg-white md:hidden shadow-lg">
+        <div id="mobile-menu" class="hidden md:hidden" style="background: var(--bg2); border-top: 1px solid var(--border);">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="/apps" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Apps</a>
-                <a href="/guides" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Guides</a>
-                <a href="/buch" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Buch</a>
-                <a href="/profil" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Über mich</a>
-                <a href="/kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Kontakt</a>
+                <a href="/apps" class="nav-link block px-3 py-2">Apps</a>
+                <a href="/guides" class="nav-link block px-3 py-2">Guides</a>
+                <a href="/buch" class="nav-link block px-3 py-2">Buch</a>
+                <a href="/profil" class="nav-link block px-3 py-2">Über mich</a>
+                <a href="/kontakt" class="nav-link block px-3 py-2">Kontakt</a>
             </div>
         </div>
     </nav>
@@ -50,7 +62,7 @@
         <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold mb-8">Datenschutzerklärung</h1>
 
-            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <section class="card p-6 mb-6">
                 <h2 class="text-2xl font-semibold mb-4">1. Datenschutz auf einen Blick</h2>
                 <h3 class="text-xl font-semibold mb-3">Allgemeine Hinweise</h3>
                 <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
@@ -65,12 +77,12 @@
                 <p class="mb-4">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.</p>
             </section>
 
-            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <section class="card p-6 mb-6">
                 <h2 class="text-2xl font-semibold mb-4">2. Hosting</h2>
                 <p class="mb-4">Wir hosten die Inhalte unserer Website bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland.</p>
             </section>
 
-            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <section class="card p-6 mb-6">
                 <h2 class="text-2xl font-semibold mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
                 <h3 class="text-xl font-semibold mb-3">Datenschutz</h3>
                 <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
@@ -83,7 +95,7 @@
                 </p>
             </section>
 
-            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <section class="card p-6 mb-6">
                 <h2 class="text-2xl font-semibold mb-4">4. Terminvereinbarung mit Fantastical</h2>
                 <p class="mb-4">Für die Terminvereinbarung nutzen wir den Dienst Fantastical von Flexibits Inc. Wenn Sie einen Termin über unsere Website buchen, werden die von Ihnen eingegebenen Daten an Flexibits Inc. übermittelt.</p>
 
@@ -100,27 +112,61 @@
                 <p class="mb-4">Die Datenverarbeitung erfolgt zum Zweck der Terminkoordination auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
 
                 <h3 class="text-xl font-semibold mb-3">Datenweitergabe</h3>
-                <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Datenschutzerklärung von Flexibits</a>.</p>
+                <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--copper); text-decoration: underline;" class="hover:opacity-80 transition-opacity">Datenschutzerklärung von Flexibits</a>.</p>
             </section>
         </main>
     </div>
 
-    <footer class="bg-gray-900 text-white py-8">
+    <!-- Footer -->
+    <footer class="footer-main py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center">
-                <p class="text-gray-400 text-sm">&copy; 2026 BERENT | Beratung + Entwicklung</p>
-                <div class="flex flex-wrap gap-4 text-sm">
-                    <a href="/impressum" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Impressum</a>
-                    <a href="/datenschutz" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Datenschutz</a>
-                    <a href="/showcase" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Projekte</a>
-                    <a href="https://linkedin.com/in/berentai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">LinkedIn</a>
-                    <a href="https://instagram.com/berent.ai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Instagram</a>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">&copy; 2026 BERENT | Beratung + Entwicklung</p>
+                <div class="flex flex-wrap gap-4" style="font-size: 0.875rem;">
+                    <a href="/impressum" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Impressum</a>
+                    <a href="/datenschutz" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Datenschutz</a>
+                    <a href="/showcase" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Projekte</a>
+                    <a href="https://linkedin.com/in/berentai" target="_blank" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">LinkedIn</a>
+                    <a href="https://instagram.com/berent.ai" target="_blank" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Instagram</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+
+            function toggleTheme() {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                if (isLight) {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+                updateIcons();
+            }
+
+            function updateIcons() {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                const moon = document.getElementById('icon-moon');
+                const sun = document.getElementById('icon-sun');
+                if (moon && sun) {
+                    moon.classList.toggle('hidden', isLight);
+                    sun.classList.toggle('hidden', !isLight);
+                }
+                document.querySelectorAll('.icon-moon-m').forEach(el => el.classList.toggle('hidden', isLight));
+                document.querySelectorAll('.icon-sun-m').forEach(el => el.classList.toggle('hidden', !isLight));
+            }
+
+            document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+            updateIcons();
+        })();
+
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
