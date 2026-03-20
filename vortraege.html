@@ -6,75 +6,126 @@
     <title>Vorträge und Präsentationen - BERENT | Beratung + Entwicklung</title>
     <link href="output.css" rel="stylesheet">
     <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
-    <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-gray-100 text-gray-800">
-
-    <div class="container mx-auto px-4 py-12 max-w-3xl">
-        <h1 class="text-4xl font-bold mb-8 text-[#80331A] text-center">Vorträge und Präsentationen</h1>
-        
-        <!-- Präsentations-Block (jetzt zuerst) -->
-        <div class="bg-white p-8 rounded-lg shadow-md space-y-4">
-            <h2 class="text-2xl font-semibold text-[#80331A]">Künstliche Intelligenz im Bildungsbereich</h2>
-            <p class="leading-relaxed">
-                <strong>Sieben "Weshalb" für den Einsatz Künstlicher Intelligenz am Gymnasium</strong>
-            </p>
-            <p class="leading-relaxed">
-                Eine Präsentation über die Chancen und Herausforderungen beim Einsatz von KI im schulischen Umfeld.
-            </p>
-            <div class="flex space-x-6">
-                <a href="https://sieben-weshalb-fuer-ki-joabjs5.gamma.site" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
-                    Zur Gamma-Präsentation (Link)
-                </a>
-                <a href="material/Sieben-Weshalb-fur-den-Einsatz-Kunstlicher-Intelligenz-am-Gymnasium.pdf" download class="text-[#80331A] hover:text-[#D6B366] underline">
-                    Präsentation als PDF herunterladen
-                </a>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="images/logo_farbe_v3.webp" alt="BERENT Logo" class="h-20 mr-2 my-1" width="auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/apps" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Apps</a>
+                    <a href="/guides" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Guides</a>
+                    <a href="/buch" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Buch</a>
+                    <a href="/profil" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Über mich</a>
+                    <a href="/kontakt" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Kontakt</a>
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Menü öffnen" id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D6B366]">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
-
-        <!-- Handbuch-Block (jetzt als zweites) -->
-        <div class="bg-white p-8 rounded-lg shadow-md space-y-4 mt-8">
-            <h2 class="text-2xl font-semibold text-[#80331A]">Praxis-Handbuch für Lehrer</h2>
-            <p class="leading-relaxed">
-                <strong>KI für Lehrer – Weniger Tool-Wahn, mehr Zeitgewinn</strong>
-            </p>
-            <p class="leading-relaxed">
-                Ein Mini-Handbuch für Lehrer, die KI nicht als weiteres Projekt sehen wollen.
-            </p>
-            <div class="flex space-x-6">
-                <a href="#URL_QUELLE_HANDBUCH" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
-                    Zur Originalquelle (Link)
-                </a>
-                <a href="material/KI-fur-Lehrkrafte-Weniger-Tool-Wahn-mehr-Zeitgewinn.pdf" download class="text-[#80331A] hover:text-[#D6B366] underline">
-                    Handbuch als PDF herunterladen
-                </a>
+        <div id="mobile-menu" class="hidden bg-white md:hidden shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/apps" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Apps</a>
+                <a href="/guides" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Guides</a>
+                <a href="/buch" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Buch</a>
+                <a href="/profil" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Über mich</a>
+                <a href="/kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Kontakt</a>
             </div>
         </div>
+    </nav>
 
-        <!-- Notion-Block -->
-        <div class="bg-white p-8 rounded-lg shadow-md space-y-4 mt-8">
-            <h2 class="text-2xl font-semibold text-[#80331A]">Effizientes Wissensmanagement mit KI</h2>
-            <p class="leading-relaxed">
-                <strong>Inside Notion | Trainer 4 Trainer</strong>
-            </p>
-            <p class="leading-relaxed">
-                Ein Einblick in die Nutzung von Notion im Rahmen der KI-Trainer-Ausbildung zur Strukturierung und Verwaltung von Wissen.
-            </p>
-            <p>
-                <a href="https://long-enquiry-6fc.notion.site/Inside-Notion-Trainer-4-Trainer-1b731cc6fd5680c4bd9af0a353909dfc?pvs=4" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
-                    Zur Notion-Seite (externer Link)
-                </a>
-            </p>
+    <!-- Content -->
+    <div class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-8 text-[#80331A] text-center">Vorträge und Präsentationen</h1>
+
+            <!-- Präsentations-Block -->
+            <div class="bg-white p-8 rounded-lg shadow-md space-y-4">
+                <h2 class="text-2xl font-semibold text-[#80331A]">Künstliche Intelligenz im Bildungsbereich</h2>
+                <p class="leading-relaxed">
+                    <strong>Sieben "Weshalb" für den Einsatz Künstlicher Intelligenz am Gymnasium</strong>
+                </p>
+                <p class="leading-relaxed">
+                    Eine Präsentation über die Chancen und Herausforderungen beim Einsatz von KI im schulischen Umfeld.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="https://sieben-weshalb-fuer-ki-joabjs5.gamma.site" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
+                        Zur Gamma-Präsentation (Link)
+                    </a>
+                    <a href="material/Sieben-Weshalb-fur-den-Einsatz-Kunstlicher-Intelligenz-am-Gymnasium.pdf" download class="text-[#80331A] hover:text-[#D6B366] underline">
+                        Präsentation als PDF herunterladen
+                    </a>
+                </div>
+            </div>
+
+            <!-- Handbuch-Block -->
+            <div class="bg-white p-8 rounded-lg shadow-md space-y-4 mt-8">
+                <h2 class="text-2xl font-semibold text-[#80331A]">Praxis-Handbuch für Lehrer</h2>
+                <p class="leading-relaxed">
+                    <strong>KI für Lehrer – Weniger Tool-Wahn, mehr Zeitgewinn</strong>
+                </p>
+                <p class="leading-relaxed">
+                    Ein Mini-Handbuch für Lehrer, die KI nicht als weiteres Projekt sehen wollen.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#URL_QUELLE_HANDBUCH" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
+                        Zur Originalquelle (Link)
+                    </a>
+                    <a href="material/KI-fur-Lehrkrafte-Weniger-Tool-Wahn-mehr-Zeitgewinn.pdf" download class="text-[#80331A] hover:text-[#D6B366] underline">
+                        Handbuch als PDF herunterladen
+                    </a>
+                </div>
+            </div>
+
+            <!-- Notion-Block -->
+            <div class="bg-white p-8 rounded-lg shadow-md space-y-4 mt-8">
+                <h2 class="text-2xl font-semibold text-[#80331A]">Effizientes Wissensmanagement mit KI</h2>
+                <p class="leading-relaxed">
+                    <strong>Inside Notion | Trainer 4 Trainer</strong>
+                </p>
+                <p class="leading-relaxed">
+                    Ein Einblick in die Nutzung von Notion im Rahmen der KI-Trainer-Ausbildung zur Strukturierung und Verwaltung von Wissen.
+                </p>
+                <p>
+                    <a href="https://long-enquiry-6fc.notion.site/Inside-Notion-Trainer-4-Trainer-1b731cc6fd5680c4bd9af0a353909dfc?pvs=4" target="_blank" rel="noopener noreferrer" class="text-[#80331A] hover:text-[#D6B366] underline">
+                        Zur Notion-Seite (externer Link)
+                    </a>
+                </p>
+            </div>
         </div>
-
-        <hr class="my-8 border-gray-300">
-
-        <div class="text-center">
-             <a href="index.html" class="text-[#80331A] hover:text-[#D6B366] underline">Zurück zur Startseite</a>
-        </div>
-
     </div>
 
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2026 BERENT | Beratung + Entwicklung</p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <a href="/impressum" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Impressum</a>
+                    <a href="/datenschutz" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Datenschutz</a>
+                    <a href="/showcase" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Projekte</a>
+                    <a href="https://linkedin.com/in/berentai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">LinkedIn</a>
+                    <a href="https://instagram.com/berent.ai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+    </script>
 </body>
-</html> 
+</html>

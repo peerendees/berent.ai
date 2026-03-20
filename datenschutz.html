@@ -1,101 +1,130 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung - berent.ai</title>
+    <title>Datenschutzerklärung - BERENT | Beratung + Entwicklung</title>
     <link href="output.css" rel="stylesheet">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
+    <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow-lg">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
+<body class="bg-gradient-to-br from-gray-50 to-gray-100">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
                 <div class="flex items-center">
-                    <a href="/">
-                        <img src="/images/logo-kompakt-farbe.webp" alt="Dr. Philipp Berent Logo" class="h-12">
+                    <a href="/" class="flex items-center">
+                        <img src="images/logo_farbe_v3.webp" alt="BERENT Logo" class="h-20 mr-2 my-1" width="auto">
                     </a>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="/" class="text-gray-700 hover:text-blue-600">Startseite</a>
-                    <a href="/profil.html" class="text-gray-700 hover:text-blue-600">Profil</a>
-                    <a href="/vortraege.html" class="text-gray-700 hover:text-blue-600">Vorträge</a>
-                    <a href="/termin.html" class="text-gray-700 hover:text-blue-600">Termin</a>
+                    <a href="/apps" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Apps</a>
+                    <a href="/guides" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Guides</a>
+                    <a href="/buch" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Buch</a>
+                    <a href="/profil" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Über mich</a>
+                    <a href="/kontakt" class="text-gray-600 hover:text-[#D6B366] transition-colors duration-300">Kontakt</a>
+                </div>
+                <div class="md:hidden">
+                    <button aria-label="Menü öffnen" id="mobile-menu-button" class="text-gray-600 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#D6B366]">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+        <div id="mobile-menu" class="hidden bg-white md:hidden shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/apps" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Apps</a>
+                <a href="/guides" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Guides</a>
+                <a href="/buch" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Buch</a>
+                <a href="/profil" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Über mich</a>
+                <a href="/kontakt" class="block px-3 py-2 rounded-md text-base font-medium text-gray-600 hover:text-[#D6B366] hover:bg-gray-50 transition-colors duration-300">Kontakt</a>
+            </div>
+        </div>
+    </nav>
 
-    <main class="container mx-auto px-6 py-8">
-        <h1 class="text-3xl font-bold mb-8">Datenschutzerklärung</h1>
+    <!-- Content -->
+    <div class="pt-32 pb-20">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl font-bold mb-8">Datenschutzerklärung</h1>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">1. Datenschutz auf einen Blick</h2>
-            <h3 class="text-xl font-semibold mb-3">Allgemeine Hinweise</h3>
-            <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-semibold mb-4">1. Datenschutz auf einen Blick</h2>
+                <h3 class="text-xl font-semibold mb-3">Allgemeine Hinweise</h3>
+                <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
 
-            <h3 class="text-xl font-semibold mb-3">Datenerfassung auf dieser Website</h3>
-            <p class="mb-4">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                <h3 class="text-xl font-semibold mb-3">Datenerfassung auf dieser Website</h3>
+                <p class="mb-4">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
 
-            <h4 class="text-lg font-semibold mb-2">Wie erfassen wir Ihre Daten?</h4>
-            <p class="mb-4">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                <h4 class="text-lg font-semibold mb-2">Wie erfassen wir Ihre Daten?</h4>
+                <p class="mb-4">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
 
-            <h4 class="text-lg font-semibold mb-2">Wofür nutzen wir Ihre Daten?</h4>
-            <p class="mb-4">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.</p>
-        </section>
+                <h4 class="text-lg font-semibold mb-2">Wofür nutzen wir Ihre Daten?</h4>
+                <p class="mb-4">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.</p>
+            </section>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">2. Hosting</h2>
-            <p class="mb-4">Wir hosten die Inhalte unserer Website bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland.</p>
-        </section>
+            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-semibold mb-4">2. Hosting</h2>
+                <p class="mb-4">Wir hosten die Inhalte unserer Website bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland.</p>
+            </section>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-            <h3 class="text-xl font-semibold mb-3">Datenschutz</h3>
-            <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-semibold mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
+                <h3 class="text-xl font-semibold mb-3">Datenschutz</h3>
+                <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
 
-            <h3 class="text-xl font-semibold mb-3">Hinweis zur verantwortlichen Stelle</h3>
-            <p class="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-            <p class="mb-4">
-                Marcus Kunkel<br>
-                E-Mail: office@berent.ai
-            </p>
-        </section>
+                <h3 class="text-xl font-semibold mb-3">Hinweis zur verantwortlichen Stelle</h3>
+                <p class="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                <p class="mb-4">
+                    Marcus Kunkel<br>
+                    E-Mail: office@berent.ai
+                </p>
+            </section>
 
-        <section class="bg-white rounded-lg shadow-md p-6 mb-6">
-            <h2 class="text-2xl font-semibold mb-4">4. Terminvereinbarung mit Fantastical</h2>
-            <p class="mb-4">Für die Terminvereinbarung nutzen wir den Dienst Fantastical von Flexibits Inc. Wenn Sie einen Termin über unsere Website buchen, werden die von Ihnen eingegebenen Daten an Flexibits Inc. übermittelt.</p>
-            
-            <h3 class="text-xl font-semibold mb-3">Datenverarbeitung</h3>
-            <p class="mb-4">Folgende Daten können im Rahmen der Terminvereinbarung verarbeitet werden:</p>
-            <ul class="list-disc pl-6 mb-4">
-                <li>Name</li>
-                <li>E-Mail-Adresse</li>
-                <li>Gewünschter Termin</li>
-                <li>Zusätzliche Anmerkungen (optional)</li>
-            </ul>
+            <section class="bg-white rounded-lg shadow-md p-6 mb-6">
+                <h2 class="text-2xl font-semibold mb-4">4. Terminvereinbarung mit Fantastical</h2>
+                <p class="mb-4">Für die Terminvereinbarung nutzen wir den Dienst Fantastical von Flexibits Inc. Wenn Sie einen Termin über unsere Website buchen, werden die von Ihnen eingegebenen Daten an Flexibits Inc. übermittelt.</p>
 
-            <h3 class="text-xl font-semibold mb-3">Zweck und Rechtsgrundlage</h3>
-            <p class="mb-4">Die Datenverarbeitung erfolgt zum Zweck der Terminkoordination auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
+                <h3 class="text-xl font-semibold mb-3">Datenverarbeitung</h3>
+                <p class="mb-4">Folgende Daten können im Rahmen der Terminvereinbarung verarbeitet werden:</p>
+                <ul class="list-disc pl-6 mb-4">
+                    <li>Name</li>
+                    <li>E-Mail-Adresse</li>
+                    <li>Gewünschter Termin</li>
+                    <li>Zusätzliche Anmerkungen (optional)</li>
+                </ul>
 
-            <h3 class="text-xl font-semibold mb-3">Datenweitergabe</h3>
-            <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Datenschutzerklärung von Flexibits</a>.</p>
-        </section>
-    </main>
+                <h3 class="text-xl font-semibold mb-3">Zweck und Rechtsgrundlage</h3>
+                <p class="mb-4">Die Datenverarbeitung erfolgt zum Zweck der Terminkoordination auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
 
-    <footer class="bg-gray-800 text-white mt-12">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div>
-                    <a href="/impressum.html" class="text-gray-300 hover:text-white">Impressum</a>
-                    <span class="mx-2">|</span>
-                    <a href="/datenschutz.html" class="text-gray-300 hover:text-white">Datenschutz</a>
-                </div>
-                <div>
-                    <p>&copy; 2026 berent.ai</p>
+                <h3 class="text-xl font-semibold mb-3">Datenweitergabe</h3>
+                <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800">Datenschutzerklärung von Flexibits</a>.</p>
+            </section>
+        </main>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center">
+                <p class="text-gray-400 text-sm">&copy; 2026 BERENT | Beratung + Entwicklung</p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <a href="/impressum" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Impressum</a>
+                    <a href="/datenschutz" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Datenschutz</a>
+                    <a href="/showcase" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Projekte</a>
+                    <a href="https://linkedin.com/in/berentai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">LinkedIn</a>
+                    <a href="https://instagram.com/berent.ai" target="_blank" class="text-gray-400 hover:text-[#D6B366] transition-colors duration-300">Instagram</a>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+    </script>
 </body>
-</html> 
+</html>
