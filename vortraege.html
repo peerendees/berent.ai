@@ -156,11 +156,11 @@
                 const moon = document.getElementById('icon-moon');
                 const sun = document.getElementById('icon-sun');
                 if (moon && sun) {
-                    moon.classList.toggle('hidden', isLight);
-                    sun.classList.toggle('hidden', !isLight);
+                    moon.classList.toggle('hidden', !isLight);
+                    sun.classList.toggle('hidden', isLight);
                 }
-                document.querySelectorAll('.icon-moon-m').forEach(el => el.classList.toggle('hidden', isLight));
-                document.querySelectorAll('.icon-sun-m').forEach(el => el.classList.toggle('hidden', !isLight));
+                document.querySelectorAll('.icon-moon-m').forEach(el => el.classList.toggle('hidden', !isLight));
+                document.querySelectorAll('.icon-sun-m').forEach(el => el.classList.toggle('hidden', isLight));
             }
 
             document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
