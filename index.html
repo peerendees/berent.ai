@@ -21,6 +21,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+        .customer-logo {
+            mix-blend-mode: screen;
+            opacity: 0.85;
+        }
+        [data-theme="light"] .customer-logo {
+            mix-blend-mode: multiply;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -109,16 +117,16 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-nowrap items-center overflow-x-auto pb-4 snap-x snap-mandatory md:justify-center md:space-x-16 md:pb-0">
                     <a href="#" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-nachtwaechter.png" alt="Nachtwächter Logo" class="h-12" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-nachtwaechter.png" alt="Nachtwächter Logo" class="h-12 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://h-pcn.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-hpcn.png" alt="h-pcn Logo" class="h-10" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-hpcn.png" alt="h-pcn Logo" class="h-10 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://future-hair.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-future-hair.png" alt="Future Hair Logo" class="h-10" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-future-hair.png" alt="Future Hair Logo" class="h-10 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://benseler-design.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/benseler-logo.jpeg" alt="Benseler Design Logo" class="h-8" width="auto" loading="lazy">
+                        <img src="customer-logos/benseler-logo.jpeg" alt="Benseler Design Logo" class="h-8 customer-logo" width="auto" loading="lazy">
                     </a>
                 </div>
             </div>
