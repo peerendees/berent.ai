@@ -61,6 +61,17 @@
   a {
     transition: color 0.3s ease;
   }
+
+  /* QR-Code: im Dark Mode invertieren, damit der Hintergrund dunkel wird */
+  .qr-adaptive {
+    filter: invert(1) brightness(0.85);
+    border-radius: 8px;
+  }
+
+  [data-theme="light"] .qr-adaptive {
+    filter: none;
+    opacity: 0.9;
+  }
 }
 
 @layer components {
