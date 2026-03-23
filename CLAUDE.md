@@ -1,85 +1,94 @@
-# CLAUDE.md — [PROJEKTNAME]
+# BERENT.AI — Unternehmenswebsite
 
-> Lies diese Datei zu Beginn jeder Session. Sie ist dein Kontext.
-> Lies danach HANDOFF.md falls vorhanden.
+## Projektübersicht
 
----
+Offizielle Website von BERENT | Beratung + Entwicklung. Präsentiert Dienstleistungen, Anwendungen, Leitfäden und Kontaktmöglichkeiten.
 
-## Projekt
+**Deployment:** Vercel — https://berent.ai
+**Repository:** https://github.com/peerendees/berent.ai.git
+**Domain:** berent.ai (+ www.berent.ai)
 
-| | |
-|---|---|
-| **Name** | [PROJEKTNAME] |
-| **Linear** | [LINEAR-PROJEKT-URL] |
-| **GitHub** | https://github.com/peerendees/[REPO-NAME] |
-| **Live** | [URL oder „noch nicht deployed"] |
-| **Stack** | [z.B. Next.js · Supabase · Vercel · n8n] |
+## Architektur
 
----
+- **Multi-Page Website:** Einzelne HTML-Seiten pro Bereich
+- **CSS:** Tailwind CSS (Build via PostCSS) + Custom Properties für CI
+- **Kein Framework:** Vanilla HTML/CSS/JS
+- **Deployment:** Vercel (Static)
 
-## Worum geht es
+## Seiten
 
-[2–3 Sätze: Was ist dieses Projekt, für wen, welches Problem löst es.]
+| Seite | Datei | Inhalt |
+|-------|-------|--------|
+| Startseite | `index.html` | Hero, Services, CTA |
+| Anwendungen | `apps.html` | Links zu Sub-Apps (Textschmiede, Startrampe, VAaaS, ROI-Rechner, Obsidian Gen) |
+| Leitfaden | `guides.html` | Relaunch-Guide, Launch-Lotse, Hacks |
+| Buch | `buch.html` | Buchprojekt |
+| Über mich | `profil.html` | Profil Marcus Berent |
+| Kontakt | `kontakt.html` | Kontaktformular |
+| Vorträge | `vortraege.html` | Vortragsangebote |
+| Impressum | `impressum.html` | Rechtliches |
+| Datenschutz | `datenschutz.html` | DSGVO |
+| Showcase | `showcase.html` | Projektgalerie |
+| Termin | `termin.html` | Terminbuchung |
 
----
+## Sub-Domains und Projekte
 
-## Arbeitsregeln
+| App | URL | Repo |
+|-----|-----|------|
+| Textschmiede | textschmiede-5tc.berent.ai | peerendees/textschmiede-5TC |
+| Startrampe | startrampe.berent.ai | peerendees/startrampe |
+| Launch-Lotse | launch-lotse.berent.ai | peerendees/launch-lotse |
+| Hacks | hacks.berent.ai | peerendees/hacks |
+| VAaaS | vaaas.berent.ai | peerendees/vaaas |
+| ROI-Rechner | roi.berent.ai | peerendees/vaaas-roi-calculator |
+| BelegChat | belegchat.berent.ai | peerendees/belegchat-landing |
 
-- Sprache im Code: Englisch (Variablen, Funktionen, Kommentare)
-- Sprache in Dokumentation / Commits: Deutsch
-- Commit-Format: `BER-[Issue-Nr]: [Was wurde gemacht]`
-- Kein direkter Push auf `main` — immer Branch → PR → Merge
-- DSGVO: keine personenbezogenen Daten in Logs oder Commits
-- BERENT CI gilt für alle visuellen Outputs (siehe `.cursor/rules/berent-ci.md`)
+## Corporate Identity
 
----
+Folgt der BERENT.AI CI (siehe Skill `berent-ci`):
+- **Dark Mode** ist Standard, Light Mode über Toggle
+- **Fonts:** Bebas Neue (Headlines), Lora (Fließtext), JetBrains Mono (Labels)
+- **Farben:** Kupfer-Akzentsystem, Gold nur für Plus-Symbol
+- **Kein Ampersand** als Konjunktion — immer „und"
 
-## Projektstruktur
+## Navigation
+
+Alle App-Links öffnen in neuem Tab (`target="_blank" rel="noopener"`), damit die Hauptseite im Hintergrund bleibt. Sub-Apps haben Smart Back-Navigation:
+1. `window.close()` wenn via `window.opener` geöffnet
+2. `history.back()` wenn Referrer berent.ai enthält
+3. Fallback: Navigation zu berent.ai
+
+## Theme-System
+
+- Dark/Light Toggle in Navigation (Desktop + Mobile)
+- SVG-Icons: Sonne (Dark aktiv) / Mond (Light aktiv)
+- Zustand in localStorage gespeichert
+
+## Konventionen
+
+- **Sprache:** Deutsche UI
+- **Commit-Sprache:** Englisch
+- **CSS:** Tailwind + Custom Properties in `output.css`
+- **Kein Ampersand** in UI-Texten
+
+## Dateien
 
 ```
-[Hier die wichtigsten Verzeichnisse kurz beschreiben]
-/src
-/public
-...
+index.html          # Startseite
+apps.html           # Anwendungen (Links zu Sub-Apps)
+guides.html         # Leitfaden (Relaunch-Guide, Launch-Lotse, Hacks)
+buch.html           # Buchprojekt
+profil.html         # Über mich
+kontakt.html        # Kontakt
+vortraege.html      # Vorträge
+termin.html         # Terminbuchung
+showcase.html       # Projektgalerie
+impressum.html      # Impressum
+datenschutz.html    # Datenschutz
+output.css          # Tailwind Build Output
+tailwind.config.js  # Tailwind Konfiguration
+vercel.json         # Vercel Config (Rewrites)
+images/             # Logos, Bilder
+public/             # Statische Assets
+src/                # Source CSS für Tailwind
 ```
-
----
-
-## Umgebung & Secrets
-
-- `.env.local` liegt lokal, nie committen
-- Variablen-Übersicht: [z.B. Notion-Seite oder kurze Liste hier]
-
-```
-SUPABASE_URL=
-SUPABASE_ANON_KEY=
-...
-```
-
----
-
-## Offene Entscheidungen / bekannte Baustellen
-
-- [ ] [Beispiel: Auth-Strategie noch nicht final entschieden]
-- [ ] [Beispiel: Mobile Breakpoints fehlen noch]
-
----
-
-## Nächste Schritte (grob)
-
-1. [Schritt 1]
-2. [Schritt 2]
-3. [Schritt 3]
-
----
-
-## Session-Übergabe
-
-Am Ende jeder Arbeitseinheit:
-1. `HANDOFF.md` aktualisieren
-2. Committen: `BER-[Nr]: Session-Übergabe [Datum]`
-3. Pushen
-
----
-
-*BERENT.AI · Beratung + Entwicklung · berent.ai*
