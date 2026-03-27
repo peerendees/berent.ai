@@ -4,7 +4,7 @@
   "description": "Website für BERENT | Beratung + Entwicklung",
   "main": "index.html",
   "scripts": {
-    "build": "tailwindcss -i ./src/input.css -o ./public/output.css --minify && cp index.html impressum.html datenschutz.html termin.html profil.html vortraege.html apps.html guides.html buch.html kontakt.html showcase.html manifest.json service-worker.js public/ && cp -r images public/ && cp -r customer-logos public/ && cp -r material public/"
+    "build": "tailwindcss -i ./src/input.css -o ./public/output.css --minify && cp index.html impressum.html datenschutz.html termin.html profil.html vortraege.html apps.html guides.html buch.html kontakt.html showcase.html qualifikationen.html manifest.json service-worker.js public/ && cp -r images public/ && cp -r customer-logos public/ && cp -r material public/"
   },
   "keywords": [],
   "author": "",
