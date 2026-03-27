@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung - BERENT | Beratung + Entwicklung</title>
+    <title>KI für Einsteiger - BERENT | Beratung + Entwicklung</title>
     <!-- Google Fonts: Bebas Neue, Lora, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
     <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <!-- Navigation -->
@@ -25,7 +24,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/apps" class="nav-link">Anwendungen</a>
                     <a href="/guides" class="nav-link">Leitfaden</a>
-                    <a href="/buch" class="nav-link">Buch</a>
+                    <a href="/buch" class="nav-link active">Buch</a>
                     <a href="/profil" class="nav-link">Über mich</a>
                     <a href="/kontakt" class="nav-link">Kontakt</a>
                     <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema wechseln">
@@ -50,7 +49,7 @@
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="/apps" class="nav-link block px-3 py-2">Anwendungen</a>
                 <a href="/guides" class="nav-link block px-3 py-2">Leitfaden</a>
-                <a href="/buch" class="nav-link block px-3 py-2">Buch</a>
+                <a href="/buch" class="nav-link active block px-3 py-2">Buch</a>
                 <a href="/profil" class="nav-link block px-3 py-2">Über mich</a>
                 <a href="/kontakt" class="nav-link block px-3 py-2">Kontakt</a>
             </div>
@@ -59,69 +58,47 @@
 
     <!-- Content -->
     <div class="pt-32 pb-20">
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold mb-8">Datenschutzerklärung</h1>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold mb-4">KI für Einsteiger</h1>
+                <p class="text-lg max-w-2xl mx-auto" style="color: var(--text-muted);">Der praxisnahe Einstieg in die Welt der Künstlichen Intelligenz — verständlich, strukturiert und sofort anwendbar.</p>
+            </div>
 
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">1. Datenschutz auf einen Blick</h2>
-                <h3 class="text-xl font-semibold mb-3">Allgemeine Hinweise</h3>
-                <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
-
-                <h3 class="text-xl font-semibold mb-3">Datenerfassung auf dieser Website</h3>
-                <p class="mb-4">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
-
-                <h4 class="text-lg font-semibold mb-2">Wie erfassen wir Ihre Daten?</h4>
-                <p class="mb-4">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
-
-                <h4 class="text-lg font-semibold mb-2">Wofür nutzen wir Ihre Daten?</h4>
-                <p class="mb-4">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.</p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">2. Hosting</h2>
-                <p class="mb-4">Wir hosten die Inhalte unserer Website bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland.</p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-                <h3 class="text-xl font-semibold mb-3">Datenschutz</h3>
-                <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-
-                <h3 class="text-xl font-semibold mb-3">Hinweis zur verantwortlichen Stelle</h3>
-                <p class="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-                <p class="mb-4">
-                    Marcus Kunkel<br>
-                    E-Mail: office@berent.ai
-                </p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">4. Terminvereinbarung mit Fantastical</h2>
-                <p class="mb-4">Für die Terminvereinbarung nutzen wir den Dienst Fantastical von Flexibits Inc. Wenn Sie einen Termin über unsere Website buchen, werden die von Ihnen eingegebenen Daten an Flexibits Inc. übermittelt.</p>
-
-                <h3 class="text-xl font-semibold mb-3">Datenverarbeitung</h3>
-                <p class="mb-4">Folgende Daten können im Rahmen der Terminvereinbarung verarbeitet werden:</p>
-                <ul class="list-disc pl-6 mb-4">
-                    <li>Name</li>
-                    <li>E-Mail-Adresse</li>
-                    <li>Gewünschter Termin</li>
-                    <li>Zusätzliche Anmerkungen (optional)</li>
-                </ul>
-
-                <h3 class="text-xl font-semibold mb-3">Zweck und Rechtsgrundlage</h3>
-                <p class="mb-4">Die Datenverarbeitung erfolgt zum Zweck der Terminkoordination auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
-
-                <h3 class="text-xl font-semibold mb-3">Datenweitergabe</h3>
-                <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--copper); text-decoration: underline;" class="hover:opacity-80 transition-opacity">Datenschutzerklärung von Flexibits</a>.</p>
-            </section>
-        </main>
+            <div class="card p-8 md:p-12">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="flex-1">
+                        <h2 class="text-2xl font-bold mb-4">Dein Wegweiser in die KI-Welt</h2>
+                        <p class="mb-4" style="color: var(--text-muted);">
+                            Dieses Buch richtet sich an alle, die KI verstehen und nutzen wollen — ohne Vorkenntnisse, ohne Fachjargon. Du lernst, wie KI funktioniert, wo sie im Alltag hilft und wie du sie selbst einsetzen kannst.
+                        </p>
+                        <ul class="space-y-2 mb-6" style="color: var(--text-muted);">
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--gold);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                                <span>Grundlagen verständlich erklärt</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--gold);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                                <span>Praxisbeispiele aus dem Mittelstand</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--gold);" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                                <span>Sofort umsetzbare Tipps und Anleitungen</span>
+                            </li>
+                        </ul>
+                        <a href="https://launch.berent.ai/ki-einsteiger/" target="_blank" class="btn-primary">
+                            Zum Buch →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer-main py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center">
-                <p style="color: var(--text-muted); font-size: 0.875rem;">&copy; 2026 BERENT | Beratung + Entwicklung</p>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">© 2026 BERENT | Beratung + Entwicklung</p>
                 <div class="flex flex-wrap gap-4" style="font-size: 0.875rem;">
                     <a href="/impressum" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Impressum</a>
                     <a href="/datenschutz" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Datenschutz</a>

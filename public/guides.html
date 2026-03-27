@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datenschutzerklärung - BERENT | Beratung + Entwicklung</title>
+    <title>Leitfaden - BERENT | Beratung + Entwicklung</title>
     <!-- Google Fonts: Bebas Neue, Lora, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
     <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
-    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <!-- Navigation -->
@@ -24,7 +23,7 @@
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/apps" class="nav-link">Anwendungen</a>
-                    <a href="/guides" class="nav-link">Leitfaden</a>
+                    <a href="/guides" class="nav-link active">Leitfaden</a>
                     <a href="/buch" class="nav-link">Buch</a>
                     <a href="/profil" class="nav-link">Über mich</a>
                     <a href="/kontakt" class="nav-link">Kontakt</a>
@@ -49,7 +48,7 @@
         <div id="mobile-menu" class="hidden md:hidden" style="background: var(--bg2); border-top: 1px solid var(--border);">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="/apps" class="nav-link block px-3 py-2">Anwendungen</a>
-                <a href="/guides" class="nav-link block px-3 py-2">Leitfaden</a>
+                <a href="/guides" class="nav-link active block px-3 py-2">Leitfaden</a>
                 <a href="/buch" class="nav-link block px-3 py-2">Buch</a>
                 <a href="/profil" class="nav-link block px-3 py-2">Über mich</a>
                 <a href="/kontakt" class="nav-link block px-3 py-2">Kontakt</a>
@@ -59,69 +58,54 @@
 
     <!-- Content -->
     <div class="pt-32 pb-20">
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold mb-8">Datenschutzerklärung</h1>
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-4">Leitfaden</h1>
+            <p class="mb-12 text-lg" style="color: var(--text-muted);">Anleitungen und Wissensseiten — praxisnah und verständlich.</p>
 
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">1. Datenschutz auf einen Blick</h2>
-                <h3 class="text-xl font-semibold mb-3">Allgemeine Hinweise</h3>
-                <p class="mb-4">Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Relaunch-Guide -->
+                <a href="https://relaunch-guide.berent.ai" class="card block">
+                    <div class="mb-4" style="color: var(--gold);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Webseiten-Relaunch-Leitfaden</h3>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">Schritt-für-Schritt-Anleitung für einen erfolgreichen Website-Relaunch.</p>
+                    <span class="inline-block mt-4 text-sm font-semibold" style="color: var(--copper);">Zum Guide →</span>
+                </a>
 
-                <h3 class="text-xl font-semibold mb-3">Datenerfassung auf dieser Website</h3>
-                <p class="mb-4">Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                <!-- Launch-Lotse -->
+                <a href="https://launch-lotse.berent.ai" class="card block">
+                    <div class="mb-4" style="color: var(--gold);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Launch-Lotse</h3>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">Dein Wegweiser für den erfolgreichen Launch deines KI-Projekts.</p>
+                    <span class="inline-block mt-4 text-sm font-semibold" style="color: var(--copper);">Zum Lotsen →</span>
+                </a>
 
-                <h4 class="text-lg font-semibold mb-2">Wie erfassen wir Ihre Daten?</h4>
-                <p class="mb-4">Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
-
-                <h4 class="text-lg font-semibold mb-2">Wofür nutzen wir Ihre Daten?</h4>
-                <p class="mb-4">Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten.</p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">2. Hosting</h2>
-                <p class="mb-4">Wir hosten die Inhalte unserer Website bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Deutschland.</p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">3. Allgemeine Hinweise und Pflichtinformationen</h2>
-                <h3 class="text-xl font-semibold mb-3">Datenschutz</h3>
-                <p class="mb-4">Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
-
-                <h3 class="text-xl font-semibold mb-3">Hinweis zur verantwortlichen Stelle</h3>
-                <p class="mb-4">Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
-                <p class="mb-4">
-                    Marcus Kunkel<br>
-                    E-Mail: office@berent.ai
-                </p>
-            </section>
-
-            <section class="card p-6 mb-6">
-                <h2 class="text-2xl font-semibold mb-4">4. Terminvereinbarung mit Fantastical</h2>
-                <p class="mb-4">Für die Terminvereinbarung nutzen wir den Dienst Fantastical von Flexibits Inc. Wenn Sie einen Termin über unsere Website buchen, werden die von Ihnen eingegebenen Daten an Flexibits Inc. übermittelt.</p>
-
-                <h3 class="text-xl font-semibold mb-3">Datenverarbeitung</h3>
-                <p class="mb-4">Folgende Daten können im Rahmen der Terminvereinbarung verarbeitet werden:</p>
-                <ul class="list-disc pl-6 mb-4">
-                    <li>Name</li>
-                    <li>E-Mail-Adresse</li>
-                    <li>Gewünschter Termin</li>
-                    <li>Zusätzliche Anmerkungen (optional)</li>
-                </ul>
-
-                <h3 class="text-xl font-semibold mb-3">Zweck und Rechtsgrundlage</h3>
-                <p class="mb-4">Die Datenverarbeitung erfolgt zum Zweck der Terminkoordination auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen).</p>
-
-                <h3 class="text-xl font-semibold mb-3">Datenweitergabe</h3>
-                <p class="mb-4">Die Daten werden an Flexibits Inc. übermittelt und dort gemäß deren Datenschutzbestimmungen verarbeitet. Weitere Informationen finden Sie in der <a href="https://flexibits.com/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--copper); text-decoration: underline;" class="hover:opacity-80 transition-opacity">Datenschutzerklärung von Flexibits</a>.</p>
-            </section>
-        </main>
+                <!-- Claude Hacks (Coming Soon) -->
+                <div class="card opacity-60">
+                    <div class="mb-4" style="color: var(--text-muted);">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 0 0-2.455 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2" style="color: var(--text-muted);">Claude Hacks</h3>
+                    <p style="color: var(--text-muted); font-size: 0.875rem;">In Planung</p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="footer-main py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center">
-                <p style="color: var(--text-muted); font-size: 0.875rem;">&copy; 2026 BERENT | Beratung + Entwicklung</p>
+                <p style="color: var(--text-muted); font-size: 0.875rem;">© 2026 BERENT | Beratung + Entwicklung</p>
                 <div class="flex flex-wrap gap-4" style="font-size: 0.875rem;">
                     <a href="/impressum" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Impressum</a>
                     <a href="/datenschutz" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Datenschutz</a>
@@ -134,6 +118,7 @@
     </footer>
 
     <script>
+        // Theme Toggle
         (function() {
             const saved = localStorage.getItem('theme');
             if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
@@ -167,6 +152,7 @@
             updateIcons();
         })();
 
+        // Mobile Menu
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });

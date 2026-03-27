@@ -1,74 +1,164 @@
 <!DOCTYPE html>
-<html lang="de" class="scroll-smooth">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil und Ansatz - BERENT | Beratung + Entwicklung</title>
+    <title>Über mich - BERENT | Beratung + Entwicklung</title>
+    <!-- Google Fonts: Bebas Neue, Lora, JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Lora:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
     <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body>
+    <!-- Navigation -->
+    <nav class="nav-main fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-3">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center">
+                        <img src="images/logo_farbe_v3.webp" alt="BERENT Logo" class="h-20 mr-2 my-1" width="auto">
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/apps" class="nav-link">Anwendungen</a>
+                    <a href="/guides" class="nav-link">Leitfaden</a>
+                    <a href="/buch" class="nav-link">Buch</a>
+                    <a href="/profil" class="nav-link active">Über mich</a>
+                    <a href="/kontakt" class="nav-link">Kontakt</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Farbschema wechseln">
+                        <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z"/></svg>
+                        <svg id="icon-sun" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center gap-3">
+                    <button id="theme-toggle-mobile" class="theme-toggle" aria-label="Farbschema wechseln">
+                        <svg class="icon-moon-m w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z"/></svg>
+                        <svg class="icon-sun-m w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+                    </button>
+                    <button aria-label="Menü öffnen" id="mobile-menu-button" style="color: var(--text-muted);">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden" style="background: var(--bg2); border-top: 1px solid var(--border);">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/apps" class="nav-link block px-3 py-2">Anwendungen</a>
+                <a href="/guides" class="nav-link block px-3 py-2">Leitfaden</a>
+                <a href="/buch" class="nav-link block px-3 py-2">Buch</a>
+                <a href="/profil" class="nav-link active block px-3 py-2">Über mich</a>
+                <a href="/kontakt" class="nav-link block px-3 py-2">Kontakt</a>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container mx-auto px-4 py-12 max-w-3xl">
-        <h1 class="text-4xl font-bold mb-8 text-[#80331A] text-center">Profil und Ansatz</h1>
-        
-        <!-- Haupttext wieder als einzelner Block -->
-        <div class="bg-white p-8 rounded-lg shadow-md space-y-6">
-            <p class="leading-relaxed">
-                Ich bin Marcus Kunkel – ich wirke dort, wo Technologie auf menschliche Bedürfnisse trifft.
-            </p>
-            <p class="leading-relaxed">
-                Als Experte für Künstliche Intelligenz, systemisches Coaching, Didaktik, Softwareentwicklung und digitale Privatsphäre begleite ich mittelständische Unternehmen mit 1 bis 200 Mitarbeiter. Mein Fokus: Die erfolgreiche Verbindung von Automatisierung, Trainings und Veränderungsprozessen – verlässlich, verständlich und wirksam.
-            </p>
-            
-            <!-- Deutlicher Trenner -->
-            <hr class="my-6 border-gray-300">
-            
-            <!-- Vorträge-Block (eingefügt) -->
-            <div class="text-center">
-                <h2 class="text-2xl font-semibold mb-4 text-[#80331A]">Vorträge und Einblicke</h2>
-                <p class="text-gray-700 mb-4">
-                    Neben meiner Beratungstätigkeit teile ich mein Wissen auch in Vorträgen, z. B. zum Thema KI im Bildungsbereich.
+    <!-- Content -->
+    <div class="pt-32 pb-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl font-bold mb-8">Profil und Ansatz</h1>
+
+            <div class="card p-8 space-y-6">
+                <p class="leading-relaxed">
+                    Ich bin Marcus Kunkel – ich wirke dort, wo Technologie auf menschliche Bedürfnisse trifft.
                 </p>
-                <p>
-                    <a href="vortraege.html" class="text-[#80331A] hover:text-[#D6B366] underline font-semibold">
+                <p class="leading-relaxed">
+                    Als Experte für Künstliche Intelligenz, systemisches Coaching, Didaktik, Softwareentwicklung und digitale Privatsphäre begleite ich mittelständische Unternehmen mit 1 bis 200 Mitarbeiter. Mein Fokus: Die erfolgreiche Verbindung von Automatisierung, Trainings und Veränderungsprozessen – verlässlich, verständlich und wirksam.
+                </p>
+
+                <hr style="border-color: var(--border);" class="my-6">
+
+                <div class="text-center">
+                    <h2 class="text-2xl font-semibold mb-4">Vorträge und Einblicke</h2>
+                    <p class="mb-4" style="color: var(--text-muted);">
+                        Neben meiner Beratungstätigkeit teile ich mein Wissen auch in Vorträgen, z. B. zum Thema KI im Bildungsbereich.
+                    </p>
+                    <a href="/vortraege" class="font-semibold hover:opacity-80 transition-opacity" style="color: var(--copper); text-decoration: underline;">
                         Zu den Vorträgen und Präsentationen &rarr;
                     </a>
+                </div>
+
+                <hr style="border-color: var(--border);" class="my-6">
+
+                <p class="leading-relaxed">
+                    Viele meiner Kunden stehen vor der Herausforderung, technische Lösungen in bestehende Arbeitsrealitäten zu integrieren – ohne Überforderung oder Widerstand. Genau hier setze ich an: Mit präziser Bedarfsanalyse, KI-gestützten Reflexions- und Umsetzungstools sowie Trainingsformaten, die individuell auf Führungskräfte und Teams abgestimmt sind.
+                </p>
+                <p class="leading-relaxed">
+                    Ich arbeite direkt mit den Menschen, die Verantwortung tragen – in 1:1-Settings, Teamtrainings und maßgeschneiderten Formaten. Die Inhalte reichen von Automatisierung über Veränderungsbegleitung bis zur wirksamen Kommunikation im Kontext neuer Technologien.
+                </p>
+                <p class="leading-relaxed">
+                    Was mich unterscheidet: Ich spreche die Sprache der Technik und die der Menschen. Ich kann erklären, was komplex ist, und übersetzen, was zwischen den Zeilen steht. Ich verstehe Systeme – und Beziehungen.
+                </p>
+                <p class="leading-relaxed">
+                    Meine Kunden schätzen an mir nicht nur fachliche Tiefe und methodische Vielfalt, sondern vor allem Verlässlichkeit, Klarheit und eine authentische, zugewandte Zusammenarbeit. Ich bin Impulsgeber, Sparringspartner und Umsetzer – mit Ausdauer, Leidenschaft und dem Blick für das Wesentliche.
+                </p>
+                <p class="leading-relaxed">
+                    Als Marathonläufer, Skifahrer, Triathlet und langjähriger Teamplayer weiß ich, dass nachhaltige Veränderungen kein Sprint sind. Sie brauchen Struktur, Motivation – und jemanden, der mitzieht.
+                </p>
+                <p class="leading-relaxed">
+                    Ziel meiner Arbeit ist es, dass Technologie nicht überfordert, sondern befähigt. Damit Systeme funktionieren. Damit Menschen mitgehen. Und damit Veränderung wirkt.
                 </p>
             </div>
-            
-            <!-- Deutlicher Trenner -->
-            <hr class="my-6 border-gray-300">
-            
-            <p class="leading-relaxed">
-                Viele meiner Kunden stehen vor der Herausforderung, technische Lösungen in bestehende Arbeitsrealitäten zu integrieren – ohne Überforderung oder Widerstand. Genau hier setze ich an: Mit präziser Bedarfsanalyse, KI-gestützten Reflexions- und Umsetzungstools sowie Trainingsformaten, die individuell auf Führungskräfte und Teams abgestimmt sind.
-            </p>
-            <p class="leading-relaxed">
-                Ich arbeite direkt mit den Menschen, die Verantwortung tragen – in 1:1-Settings, Teamtrainings und maßgeschneiderten Formaten. Die Inhalte reichen von Automatisierung über Veränderungsbegleitung bis zur wirksamen Kommunikation im Kontext neuer Technologien.
-            </p>
-            <p class="leading-relaxed">
-                Was mich unterscheidet: Ich spreche die Sprache der Technik und die der Menschen. Ich kann erklären, was komplex ist, und übersetzen, was zwischen den Zeilen steht. Ich verstehe Systeme – und Beziehungen.
-            </p>
-            <p class="leading-relaxed">
-                Meine Kunden schätzen an mir nicht nur fachliche Tiefe und methodische Vielfalt, sondern vor allem Verlässlichkeit, Klarheit und eine authentische, zugewandte Zusammenarbeit. Ich bin Impulsgeber, Sparringspartner und Umsetzer – mit Ausdauer, Leidenschaft und dem Blick für das Wesentliche.
-            </p>
-            <p class="leading-relaxed">
-                Als Marathonläufer, Skifahrer, Triathlet und langjähriger Teamplayer weiß ich, dass nachhaltige Veränderungen kein Sprint sind. Sie brauchen Struktur, Motivation – und jemanden, der mitzieht.
-            </p>
-            <p class="leading-relaxed">
-                Ziel meiner Arbeit ist es, dass Technologie nicht überfordert, sondern befähigt. Damit Systeme funktionieren. Damit Menschen mitgehen. Und damit Veränderung wirkt.
-            </p>
         </div>
-
-        <hr class="my-8 border-gray-300">
-
-        <div class="text-center">
-             <a href="index.html" class="text-[#80331A] hover:text-[#D6B366] underline">Zurück zur Startseite</a>
-        </div>
-
     </div>
 
+    <!-- Footer -->
+    <footer class="footer-main py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-between items-center">
+                <p style="color: var(--text-muted); font-size: 0.875rem;">© 2026 BERENT | Beratung + Entwicklung</p>
+                <div class="flex flex-wrap gap-4" style="font-size: 0.875rem;">
+                    <a href="/impressum" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Impressum</a>
+                    <a href="/datenschutz" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Datenschutz</a>
+                    <a href="/showcase" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Projekte</a>
+                    <a href="https://linkedin.com/in/berentai" target="_blank" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">LinkedIn</a>
+                    <a href="https://instagram.com/berent.ai" target="_blank" style="color: var(--text-muted);" class="hover:opacity-80 transition-opacity">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'light') document.documentElement.setAttribute('data-theme', 'light');
+
+            function toggleTheme() {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                if (isLight) {
+                    document.documentElement.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    localStorage.setItem('theme', 'light');
+                }
+                updateIcons();
+            }
+
+            function updateIcons() {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                const moon = document.getElementById('icon-moon');
+                const sun = document.getElementById('icon-sun');
+                if (moon && sun) {
+                    moon.classList.toggle('hidden', !isLight);
+                    sun.classList.toggle('hidden', isLight);
+                }
+                document.querySelectorAll('.icon-moon-m').forEach(el => el.classList.toggle('hidden', !isLight));
+                document.querySelectorAll('.icon-sun-m').forEach(el => el.classList.toggle('hidden', isLight));
+            }
+
+            document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+            document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+            updateIcons();
+        })();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+    </script>
 </body>
-</html> 
+</html>

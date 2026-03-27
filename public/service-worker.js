@@ -17,7 +17,7 @@ const FILES_TO_CACHE = [
   'images/hintergrund.webp',
   'images/hintergrund-footer.webp',
   'images/kunden-hintergrund.jpg', // kein WebP vorhanden, Referenz unverändert
-  'customer-logos/logo-mcr.png',
+  'customer-logos/logo-nachtwaechter.png',
   'customer-logos/h-pcn.png',
   'customer-logos/logo-future-hair.png',
   'customer-logos/benseler-logo.jpeg',
