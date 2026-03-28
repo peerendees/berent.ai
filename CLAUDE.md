@@ -53,10 +53,41 @@ Folgt der BERENT.AI CI (siehe Skill `berent-ci`):
 
 ## Navigation
 
-Alle App-Links öffnen in neuem Tab (`target="_blank" rel="noopener"`), damit die Hauptseite im Hintergrund bleibt. Sub-Apps haben Smart Back-Navigation:
-1. `window.close()` wenn via `window.opener` geöffnet
-2. `history.back()` wenn Referrer berent.ai enthält
-3. Fallback: Navigation zu berent.ai
+Alle App-Links öffnen in neuem Tab (`target="_blank" rel="noopener"`), damit die Hauptseite im Hintergrund bleibt.
+
+### Smart Back-Navigation (Pflicht für alle Subdomains)
+
+Jede Subdomain MUSS einen sichtbaren „← berent.ai" Back-Button mit 3-stufiger Logik haben:
+
+1. `window.close()` — wenn Tab via `window.opener` geöffnet wurde (Tab schließt sich)
+2. `history.back()` — wenn `document.referrer` den String `berent.ai` enthält
+3. **Fallback** — Navigation zur konkreten Herkunftsseite (NICHT generisch zu berent.ai)
+
+**Referenz-Implementierung (HTML):**
+```html
+<a href="https://berent.ai/apps" class="header-back"
+   onclick="event.preventDefault();
+     if(window.opener) { window.close(); }
+     else if(document.referrer.includes('berent.ai')) { history.back(); }
+     else { window.location.href='https://berent.ai/apps'; }">
+  ← berent.ai
+</a>
+```
+
+**Fallback-Zuordnung nach Herkunft:**
+
+| Subdomain | Verlinkt von | Fallback-URL |
+|-----------|-------------|-------------|
+| textschmiede-5tc.berent.ai | Anwendungen | `https://berent.ai/apps` |
+| startrampe.berent.ai | Anwendungen | `https://berent.ai/apps` |
+| vaaas.berent.ai | Anwendungen | `https://berent.ai/apps` |
+| roi.berent.ai | Anwendungen | `https://berent.ai/apps` |
+| belegchat.berent.ai | Anwendungen | `https://berent.ai/apps` |
+| launch-lotse.berent.ai | Leitfaden | `https://berent.ai/guides` |
+| hacks.berent.ai | Leitfaden | `https://berent.ai/guides` |
+| relaunch-guide.berent.ai | Leitfaden | `https://berent.ai/guides` |
+
+**Regel:** Neue Subdomains erhalten die Fallback-URL der Seite, von der sie primär verlinkt werden. Diese Zuordnung wird in dieser Tabelle gepflegt.
 
 ## Theme-System
 
