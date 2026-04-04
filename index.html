@@ -47,9 +47,37 @@
             opacity: 0.7;
             filter: brightness(0.9);
         }
-        /* Abstand unter Telefon-Banner + kompakter Text-Header (kein großes Bild-Logo) */
+        /* Hero: genau eine Viewporthöhe, Trust-Leiste unten im sichtbaren Bereich (kein Scroll) */
         .hero-ber44 {
+            position: relative;
+            box-sizing: border-box;
+            min-height: 100svh;
+            height: 100svh;
+            max-height: 100svh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             padding-top: max(8.5rem, calc(2rem + 3.25rem + 2rem + env(safe-area-inset-top, 0px)));
+        }
+        .hero-ber44-inner {
+            position: relative;
+            z-index: 10;
+            flex: 1 1 0;
+            min-height: 0;
+            min-width: 0;
+            width: 100%;
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-trust-strip {
+            flex-shrink: 0;
+            position: relative;
+            z-index: 20;
+            width: 100%;
+            padding-bottom: env(safe-area-inset-bottom, 0);
         }
         .nav-brand-plus {
             color: #E8C98A;
@@ -154,6 +182,8 @@
             display: flex;
             width: 100%;
             max-width: 100vw;
+            min-height: 0;
+            flex: 1 1 auto;
             align-items: flex-start;
             gap: clamp(0.5rem, 2vw, 1.25rem);
             padding-left: 1rem;
@@ -167,6 +197,61 @@
         @media (min-width: 1024px) {
             .hero-main-row {
                 padding-left: 2rem;
+            }
+        }
+        /* Schmale Phones: etwas Luft schaffen, Foto begrenzen */
+        @media (max-width: 767px) {
+            .hero-ber44-inner {
+                padding-top: 0.25rem;
+                padding-bottom: 0.25rem;
+            }
+            .hero-photo-wrap img {
+                max-height: min(38vh, 17rem);
+            }
+            .hero-copy-col {
+                gap: clamp(1rem, 3vw, 1.5rem);
+            }
+        }
+        /* Tablet: weniger Typo, kompakteres Badge, niedrigeres Foto — alles inkl. Trust in 100svh */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .hero-ber44-inner {
+                padding-top: 0.5rem;
+                padding-bottom: 0.25rem;
+            }
+            .hero-title-line {
+                font-size: clamp(1.5rem, 3.6vw, 3.35rem) !important;
+                line-height: 1.04;
+            }
+            .hero-copy-col {
+                gap: clamp(0.85rem, 2vw, 1.35rem);
+            }
+            .hero-subtitle {
+                font-size: clamp(0.9rem, 1.8vw, 1.1rem) !important;
+            }
+            .hero-hedy-badge {
+                padding: 8px 14px !important;
+                border-radius: 6px !important;
+            }
+            .hero-hedy-badge .hero-hedy-badge-line1 {
+                font-size: 12px !important;
+            }
+            .hero-hedy-badge .hero-hedy-badge-line2 {
+                font-size: 11px !important;
+                margin-top: 2px !important;
+            }
+            .hero-photo-wrap {
+                width: min(28vw, 14rem);
+            }
+            .hero-photo-wrap img {
+                max-height: min(28vh, 13rem);
+            }
+            .hero-trust-strip {
+                padding-top: 0.65rem;
+                padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+            }
+            .hero-trust-strip .customer-logo {
+                transform: scale(0.92);
+                transform-origin: center;
             }
         }
         /* Textspalte über Portrait (z-index), Abstände Headline → Untertitel → Badge */
@@ -292,8 +377,8 @@
     </nav>
 
     <!-- Hero Section (BER-44) -->
-    <div class="hero-ber44 relative flex min-h-[100svh] flex-col bg-[#090806] pb-36 lg:pb-32">
-        <div class="relative z-10 mx-auto flex w-full max-w-[100vw] flex-1 flex-col justify-center overflow-x-clip py-6">
+    <div class="hero-ber44 bg-[#090806]">
+        <div class="hero-ber44-inner mx-auto overflow-x-clip px-0 py-4 sm:py-5 lg:py-6">
             <div class="hero-main-row">
                 <div class="hero-copy-col min-w-0 flex-1 pb-1">
                     <h1 class="hero-headline">
@@ -301,12 +386,12 @@
                         <span class="hero-animate hero-title-line hero-title-line--beat">UM...</span>
                         <span class="hero-animate hero-title-line mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
                     </h1>
-                    <p class="hero-animate font-light leading-relaxed" style="font-family:'Lora',serif; color:#C4BCB1; font-size:clamp(1rem,2.5vw,1.25rem);">
+                    <p class="hero-animate hero-subtitle font-light leading-relaxed" style="font-family:'Lora',serif; color:#C4BCB1; font-size:clamp(1rem,2.5vw,1.25rem);">
                         TÜV-zertifizierter KI-Strategieberater und Hedy-Trainer
                     </p>
-                    <div class="hero-badge-fade max-w-lg" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
-                        <p style="font-family:'Lora',serif; color:#C4BCB1; font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
-                        <p style="font-family:'Lora',serif; color:#7A6A58; font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
+                    <div class="hero-badge-fade hero-hedy-badge max-w-lg" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
+                        <p class="hero-hedy-badge-line1" style="font-family:'Lora',serif; color:#C4BCB1; font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
+                        <p class="hero-hedy-badge-line2" style="font-family:'Lora',serif; color:#7A6A58; font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
                     </div>
                 </div>
                 <div class="hero-photo-wrap z-[1]">
@@ -316,8 +401,8 @@
             </div>
         </div>
 
-        <!-- Trust-Zeile (Kundenlogos) -->
-        <section class="absolute bottom-0 left-0 right-0 z-20 w-full border-t py-4" style="background:#110E0A; border-color:#2A2118;">
+        <!-- Trust-Zeile (Kundenlogos) — im Flex-Flow unten, immer sichtbar in 100svh-Hero -->
+        <section class="hero-trust-strip border-t py-4" style="background:#110E0A; border-color:#2A2118;">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-nowrap items-center overflow-x-auto pb-2 snap-x snap-mandatory md:justify-center md:space-x-16 md:pb-0">
                     <a href="#" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
