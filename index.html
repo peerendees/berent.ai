@@ -157,20 +157,12 @@
             text-transform: uppercase;
             letter-spacing: 0.04em;
         }
-        /* Erste Zeile: Mobile zweizeilig per <br>, ab sm eine Zeile */
-        .hero-title-line--split {
-            line-height: 1.08;
-        }
-        @media (min-width: 640px) {
-            .hero-title-line--split {
-                white-space: nowrap;
-            }
-        }
         .hero-title-line--beat {
             margin-top: 0.06em;
         }
         @media (min-width: 640px) {
             .hero-title-line {
+                white-space: nowrap;
                 font-size: clamp(2.25rem, 6.5vw, 6rem);
             }
         }
@@ -259,6 +251,7 @@
                 line-height: 1.06;
             }
             .hero-title-line--split {
+                line-height: 1.08;
                 font-size: clamp(1.35rem, 6.2vw, 2.15rem);
             }
             .hero-title-line--beat {
