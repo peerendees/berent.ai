@@ -113,7 +113,7 @@
             width: 100%;
             min-width: 0;
             max-width: 100%;
-            overflow-x: auto;
+            overflow-x: visible;
             -webkit-overflow-scrolling: touch;
         }
         .hero-title-line {
@@ -125,6 +125,15 @@
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.04em;
+        }
+        /* Erste Zeile: Mobile zweizeilig per <br>, ab sm eine Zeile */
+        .hero-title-line--split {
+            line-height: 1.08;
+        }
+        @media (min-width: 640px) {
+            .hero-title-line--split {
+                white-space: nowrap;
+            }
         }
         .hero-title-line--beat {
             margin-top: 0.06em;
@@ -205,8 +214,59 @@
                 padding-left: 2rem;
             }
         }
-        /* Schmale Phones: etwas Luft schaffen, Foto begrenzen */
-        @media (max-width: 767px) {
+        /* Schmale Phones (<640px): kompakt, Trust in 100svh, Content unten bündig zur Trust-Leiste */
+        @media (max-width: 639px) {
+            .hero-ber44-inner {
+                justify-content: flex-end;
+                padding-top: 0;
+                padding-bottom: 0.125rem;
+            }
+            .hero-title-line {
+                white-space: normal;
+                overflow-wrap: break-word;
+                font-size: clamp(1.35rem, 6.2vw, 2.15rem);
+                line-height: 1.06;
+            }
+            .hero-title-line--split {
+                font-size: clamp(1.35rem, 6.2vw, 2.15rem);
+            }
+            .hero-title-line--beat {
+                margin-top: 0.04em;
+            }
+            .hero-copy-col {
+                gap: 0.55rem;
+            }
+            .hero-subtitle {
+                font-size: clamp(0.85rem, 3.2vw, 1rem) !important;
+                line-height: 1.45 !important;
+            }
+            .hero-hedy-badge {
+                padding: 8px 12px !important;
+            }
+            .hero-hedy-badge .hero-hedy-badge-line1 {
+                font-size: 12px !important;
+            }
+            .hero-hedy-badge .hero-hedy-badge-line2 {
+                font-size: 11px !important;
+                margin-top: 2px !important;
+            }
+            .hero-photo-wrap {
+                width: min(34vw, 9.5rem);
+            }
+            .hero-photo-wrap img {
+                max-height: min(26vh, 11rem);
+            }
+            .hero-trust-strip {
+                padding-top: 0.4rem;
+                padding-bottom: calc(0.4rem + env(safe-area-inset-bottom, 0px));
+            }
+            .hero-trust-strip .customer-logo {
+                transform: scale(0.88);
+                transform-origin: center;
+            }
+        }
+        /* Tablets klein: Foto begrenzen */
+        @media (min-width: 640px) and (max-width: 767px) {
             .hero-ber44-inner {
                 padding-top: 0.25rem;
                 padding-bottom: 0.25rem;
@@ -384,13 +444,13 @@
 
     <!-- Hero Section (BER-44) -->
     <div class="hero-ber44">
-        <div class="hero-ber44-inner mx-auto overflow-x-clip px-0 py-4 sm:py-5 lg:py-6">
+        <div class="hero-ber44-inner mx-auto overflow-x-clip px-0 py-2 sm:py-5 lg:py-6">
             <div class="hero-main-row">
-                <div class="hero-copy-col min-w-0 flex-1 pb-1">
+                <div class="hero-copy-col min-w-0 flex-1 pb-0 sm:pb-1">
                     <h1 class="hero-headline">
-                        <span class="hero-animate hero-title-line">ICH BAUE MEINE WEBSEITE</span>
+                        <span class="hero-animate hero-title-line hero-title-line--split">ICH BAUE<br class="sm:hidden">MEINE WEBSEITE</span>
                         <span class="hero-animate hero-title-line hero-title-line--beat">UM...</span>
-                        <span class="hero-animate hero-title-line mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
+                        <span class="hero-animate hero-title-line mt-0 sm:mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
                     </h1>
                     <p class="hero-animate hero-subtitle font-light leading-relaxed" style="font-family:'Lora',serif; color:var(--text); font-size:clamp(1rem,2.5vw,1.25rem);">
                         TÜV-zertifizierter KI-Strategieberater und Hedy-Trainer
@@ -408,20 +468,20 @@
         </div>
 
         <!-- Trust-Zeile (Kundenlogos) — im Flex-Flow unten, immer sichtbar in 100svh-Hero -->
-        <section class="hero-trust-strip border-t py-4" style="background:var(--bg2); border-color:var(--border);">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-nowrap items-center overflow-x-auto pb-2 snap-x snap-mandatory md:justify-center md:space-x-16 md:pb-0">
+        <section class="hero-trust-strip border-t py-2 sm:py-4" style="background:var(--bg2); border-color:var(--border);">
+            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+                <div class="flex flex-nowrap items-center overflow-x-auto pb-1 snap-x snap-mandatory sm:pb-2 md:justify-center md:space-x-16 md:pb-0">
                     <a href="#" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-nachtwaechter.webp" alt="Nachtwächter Logo" class="h-12 customer-logo" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-nachtwaechter.webp" alt="Nachtwächter Logo" class="h-8 sm:h-12 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://h-pcn.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-hpcn.webp" alt="h-pcn Logo" class="h-10 customer-logo" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-hpcn.webp" alt="h-pcn Logo" class="h-7 sm:h-10 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://future-hair.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-future-hair.webp" alt="Future Hair Logo" class="h-10 customer-logo" width="auto" loading="lazy">
+                        <img src="customer-logos/logo-future-hair.webp" alt="Future Hair Logo" class="h-7 sm:h-10 customer-logo" width="auto" loading="lazy">
                     </a>
                     <a href="https://benseler-design.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/benseler-logo.webp" alt="Benseler Design Logo" class="h-8 customer-logo" width="auto" loading="lazy">
+                        <img src="customer-logos/benseler-logo.webp" alt="Benseler Design Logo" class="h-6 sm:h-8 customer-logo" width="auto" loading="lazy">
                     </a>
                 </div>
             </div>
