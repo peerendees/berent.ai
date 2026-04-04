@@ -150,12 +150,12 @@
             </div>
             <!-- Mobile / Tablet: Foto unter dem Text -->
             <div class="relative z-10 mt-8 flex justify-center lg:hidden">
-                <img src="images/marcus-freigestellt.png" alt="Marcus Kunkel" class="max-h-[40vh] max-w-[70%] object-contain object-bottom" width="400" height="500" loading="lazy">
+                <img src="images/marcus-freigestellt.png" alt="Marcus Kunkel" class="max-h-[40vh] max-w-[70%] object-contain object-bottom" width="400" height="500" loading="eager" fetchpriority="high" decoding="async">
             </div>
         </div>
 
         <!-- Desktop: Foto rechts -->
-        <img src="images/marcus-freigestellt.png" alt="" class="pointer-events-none absolute bottom-24 right-0 z-[1] hidden max-h-[min(70vh,60vh)] w-auto object-contain object-bottom lg:block" width="480" height="640" loading="lazy" aria-hidden="true">
+        <img src="images/marcus-freigestellt.png" alt="" class="pointer-events-none absolute bottom-24 right-0 z-[1] hidden max-h-[min(70vh,60vh)] w-auto object-contain object-bottom lg:block" width="480" height="640" loading="eager" fetchpriority="high" decoding="async" aria-hidden="true">
 
         <!-- Hedy-Badge (Hero) -->
         <div class="hero-animate relative z-20 mx-4 mt-8 max-w-lg sm:mx-8 lg:absolute lg:bottom-28 lg:left-8 lg:mx-0 lg:mt-0" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
