@@ -79,6 +79,37 @@
             z-index: 20;
             width: 100%;
             padding-bottom: env(safe-area-inset-bottom, 0);
+            overflow: hidden;
+        }
+        /* Einheitliche Darstellung: Höhe begrenzen, Breite proportional (kein „Explodieren“ breiter Logos) */
+        .hero-trust-strip img.customer-logo {
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        .hero-trust-strip .trust-logo-nw {
+            max-height: 3rem;
+        }
+        .hero-trust-strip .trust-logo-hpcn,
+        .hero-trust-strip .trust-logo-fh {
+            max-height: 2.5rem;
+        }
+        .hero-trust-strip .trust-logo-ben {
+            max-height: 2rem;
+        }
+        @media (max-width: 639px) {
+            .hero-trust-strip .trust-logo-nw {
+                max-height: 2rem;
+            }
+            .hero-trust-strip .trust-logo-hpcn,
+            .hero-trust-strip .trust-logo-fh {
+                max-height: 1.75rem;
+            }
+            .hero-trust-strip .trust-logo-ben {
+                max-height: 1.5rem;
+            }
         }
         .nav-brand-plus {
             color: var(--gold);
@@ -260,10 +291,6 @@
                 padding-top: 0.4rem;
                 padding-bottom: calc(0.4rem + env(safe-area-inset-bottom, 0px));
             }
-            .hero-trust-strip .customer-logo {
-                transform: scale(0.88);
-                transform-origin: center;
-            }
         }
         /* Tablets klein: Foto begrenzen */
         @media (min-width: 640px) and (max-width: 767px) {
@@ -314,10 +341,6 @@
             .hero-trust-strip {
                 padding-top: 0.65rem;
                 padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
-            }
-            .hero-trust-strip .customer-logo {
-                transform: scale(0.92);
-                transform-origin: center;
             }
         }
         /* Textspalte über Portrait (z-index), Abstände Headline → Untertitel → Badge */
@@ -471,17 +494,17 @@
         <section class="hero-trust-strip border-t py-2 sm:py-4" style="background:var(--bg2); border-color:var(--border);">
             <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
                 <div class="flex flex-nowrap items-center overflow-x-auto pb-1 snap-x snap-mandatory sm:pb-2 md:justify-center md:space-x-16 md:pb-0">
-                    <a href="#" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-nachtwaechter.webp" alt="Nachtwächter Logo" class="h-8 sm:h-12 customer-logo" width="auto" loading="lazy">
+                    <a href="#" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto items-center">
+                        <img src="customer-logos/logo-nachtwaechter.webp" alt="Nachtwächter Logo" class="customer-logo trust-logo-nw" width="auto" height="auto" loading="lazy">
                     </a>
-                    <a href="https://h-pcn.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-hpcn.webp" alt="h-pcn Logo" class="h-7 sm:h-10 customer-logo" width="auto" loading="lazy">
+                    <a href="https://h-pcn.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto items-center">
+                        <img src="customer-logos/logo-hpcn.webp" alt="h-pcn Logo" class="customer-logo trust-logo-hpcn" width="auto" height="auto" loading="lazy">
                     </a>
-                    <a href="https://future-hair.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/logo-future-hair.webp" alt="Future Hair Logo" class="h-7 sm:h-10 customer-logo" width="auto" loading="lazy">
+                    <a href="https://future-hair.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto items-center">
+                        <img src="customer-logos/logo-future-hair.webp" alt="Future Hair Logo" class="customer-logo trust-logo-fh" width="auto" height="auto" loading="lazy">
                     </a>
-                    <a href="https://benseler-design.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto">
-                        <img src="customer-logos/benseler-logo.webp" alt="Benseler Design Logo" class="h-6 sm:h-8 customer-logo" width="auto" loading="lazy">
+                    <a href="https://benseler-design.de" target="_blank" rel="noopener noreferrer" class="w-full flex justify-center flex-shrink-0 snap-center md:w-auto items-center">
+                        <img src="customer-logos/benseler-logo.webp" alt="Benseler Design Logo" class="customer-logo trust-logo-ben" width="auto" height="auto" loading="lazy">
                     </a>
                 </div>
             </div>
