@@ -6,16 +6,17 @@
     <title>BERENT | Beratung + Entwicklung | Technik verstehen. Menschen mitnehmen.</title>
     <meta property="og:title" content="BERENT | Beratung + Entwicklung | Technik verstehen. Menschen mitnehmen.">
     <meta property="og:description" content="TÜV-zertifizierter KI-Strategieberater und Hedy-Trainer. KI-Automatisierung und Transformation für den Mittelstand.">
-    <meta property="og:image" content="https://berent.ai/images/BE_Farbe_V3.png">
+    <meta property="og:image" content="https://berent.ai/images/og-image.png">
+    <meta name="twitter:image" content="https://berent.ai/images/og-image.png">
     <meta property="og:url" content="https://berent.ai">
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <!-- Google Fonts: Bebas Neue, Lora, JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;500&family=Lora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="output.css" rel="stylesheet">
-    <link rel="icon" href="images/logo-kompakt-farbe.webp" type="image/webp">
+    <link rel="icon" href="images/favicon-32-dark.png" type="image/png" sizes="32x32">
     <link rel="manifest" href="manifest.json">
     <style>
         html {
@@ -153,7 +154,7 @@
             display: flex;
             width: 100%;
             max-width: 100vw;
-            align-items: flex-end;
+            align-items: flex-start;
             gap: clamp(0.5rem, 2vw, 1.25rem);
             padding-left: 1rem;
             padding-right: 0;
@@ -167,6 +168,14 @@
             .hero-main-row {
                 padding-left: 2rem;
             }
+        }
+        /* Textspalte über Portrait (z-index), Abstände Headline → Untertitel → Badge */
+        .hero-copy-col {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1.5rem, 3.5vw, 2.75rem);
         }
         .hero-photo-wrap {
             position: relative;
@@ -286,16 +295,16 @@
     <div class="hero-ber44 relative flex min-h-[100svh] flex-col bg-[#090806] pb-36 lg:pb-32">
         <div class="relative z-10 mx-auto flex w-full max-w-[100vw] flex-1 flex-col justify-center overflow-x-clip py-6">
             <div class="hero-main-row">
-                <div class="min-w-0 flex-1 pb-1">
+                <div class="hero-copy-col min-w-0 flex-1 pb-1">
                     <h1 class="hero-headline">
                         <span class="hero-animate hero-title-line">ICH BAUE MEINE WEBSEITE</span>
                         <span class="hero-animate hero-title-line hero-title-line--beat">UM...</span>
                         <span class="hero-animate hero-title-line mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
                     </h1>
-                    <p class="hero-animate mt-6 font-light leading-relaxed" style="font-family:'Lora',serif; color:#C4BCB1; font-size:clamp(1rem,2.5vw,1.25rem);">
+                    <p class="hero-animate font-light leading-relaxed" style="font-family:'Lora',serif; color:#C4BCB1; font-size:clamp(1rem,2.5vw,1.25rem);">
                         TÜV-zertifizierter KI-Strategieberater und Hedy-Trainer
                     </p>
-                    <div class="hero-badge-fade relative z-20 mt-8 max-w-lg" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
+                    <div class="hero-badge-fade max-w-lg" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
                         <p style="font-family:'Lora',serif; color:#C4BCB1; font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
                         <p style="font-family:'Lora',serif; color:#7A6A58; font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
                     </div>
