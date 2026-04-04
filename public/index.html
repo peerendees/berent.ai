@@ -30,6 +30,14 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Hedy-Badge: nur Einblenden, kein Versatz — vermeidet Überlagerung mit Headline */
+        .hero-badge-fade {
+            opacity: 0;
+            transition: opacity 0.7s ease-out;
+        }
+        .hero-badge-fade.visible {
+            opacity: 1;
+        }
         .customer-logo {
             opacity: 0.85;
             filter: brightness(1.1);
@@ -287,18 +295,16 @@
                     <p class="hero-animate mt-6 font-light leading-relaxed" style="font-family:'Lora',serif; color:#C4BCB1; font-size:clamp(1rem,2.5vw,1.25rem);">
                         TÜV-zertifizierter KI-Strategieberater und Hedy-Trainer
                     </p>
+                    <div class="hero-badge-fade relative z-20 mt-8 max-w-lg" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
+                        <p style="font-family:'Lora',serif; color:#C4BCB1; font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
+                        <p style="font-family:'Lora',serif; color:#7A6A58; font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
+                    </div>
                 </div>
                 <div class="hero-photo-wrap z-[1]">
                     <img src="images/marcus-freigestellt.png" alt="Marcus Kunkel" width="480" height="640" loading="eager" fetchpriority="high" decoding="async">
                     <div class="hero-photo-overlay" aria-hidden="true"></div>
                 </div>
             </div>
-
-        <!-- Hedy-Badge (Hero) -->
-        <div class="hero-animate relative z-20 mx-0 mt-8 max-w-lg ml-4 sm:ml-6 lg:absolute lg:bottom-28 lg:left-4 lg:mt-0 lg:ml-0 lg:max-w-lg xl:left-8" style="background:#110E0A; border:1px solid #2A2118; border-radius:8px; padding:12px 20px;">
-            <p style="font-family:'Lora',serif; color:#C4BCB1; font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
-            <p style="font-family:'Lora',serif; color:#7A6A58; font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
-        </div>
         </div>
 
         <!-- Trust-Zeile (Kundenlogos) -->
@@ -545,14 +551,19 @@
         mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
         mobileMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
 
-        // Hero-Animationen
+        // Hero-Animationen (Headline + Untertitel: fade-in-up; Hedy-Badge: nur Opacity)
         document.addEventListener('DOMContentLoaded', function() {
             const heroElements = document.querySelectorAll('.hero-animate');
-            heroElements.forEach(el => { el.classList.add('fade-in-up'); });
-            setTimeout(() => {
-                heroElements.forEach((el, index) => {
-                    setTimeout(() => { el.classList.add('visible'); }, 300 * index);
+            const badge = document.querySelector('.hero-badge-fade');
+            heroElements.forEach(function(el) { el.classList.add('fade-in-up'); });
+            setTimeout(function() {
+                heroElements.forEach(function(el, index) {
+                    setTimeout(function() { el.classList.add('visible'); }, 300 * index);
                 });
+                var n = heroElements.length;
+                setTimeout(function() {
+                    if (badge) { badge.classList.add('visible'); }
+                }, 500 + 300 * n);
             }, 500);
         });
     </script>
