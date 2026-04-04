@@ -330,6 +330,18 @@
             }
             .hero-photo-wrap img {
                 max-height: min(28vh, 13rem);
+                -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+                mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+            }
+            .hero-trust-strip .trust-logo-nw {
+                max-height: 2.25rem;
+            }
+            .hero-trust-strip .trust-logo-hpcn,
+            .hero-trust-strip .trust-logo-fh {
+                max-height: 2rem;
+            }
+            .hero-trust-strip .trust-logo-ben {
+                max-height: 1.5rem;
             }
             .hero-trust-strip {
                 padding-top: 0.65rem;
@@ -372,7 +384,7 @@
             mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
-            filter: sepia(20%) saturate(0.6) brightness(0.8) hue-rotate(-5deg);
+            filter: sepia(20%) saturate(0.6) brightness(0.7) hue-rotate(-5deg);
         }
         /* Halbtransparenter Schleier (kein Farb-Filter am Pixelbild) */
         .hero-photo-overlay {
