@@ -291,8 +291,11 @@
                 padding-top: 0.25rem;
                 padding-bottom: 0.25rem;
             }
+            .hero-photo-wrap {
+                width: min(32vw, 15rem);
+            }
             .hero-photo-wrap img {
-                max-height: min(38vh, 17rem);
+                max-height: min(40vh, 18rem);
             }
             .hero-copy-col {
                 gap: clamp(1rem, 3vw, 1.5rem);
@@ -326,10 +329,10 @@
                 margin-top: 2px !important;
             }
             .hero-photo-wrap {
-                width: min(28vw, 14rem);
+                width: min(30vw, 16rem);
             }
             .hero-photo-wrap img {
-                max-height: min(28vh, 13rem);
+                max-height: min(36vh, 16rem);
                 -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
                 mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
             }
@@ -370,14 +373,19 @@
         }
         @media (min-width: 1024px) {
             .hero-photo-wrap {
-                width: min(26vw, 18rem);
+                width: min(28vw, 20rem);
+            }
+        }
+        @media (min-width: 1440px) {
+            .hero-photo-wrap {
+                width: min(24vw, 22rem);
             }
         }
         .hero-photo-wrap img {
             display: block;
             width: 100%;
             height: auto;
-            max-height: min(46vh, 24rem);
+            max-height: min(52vh, 26rem);
             object-fit: contain;
             object-position: bottom right;
             -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
@@ -385,6 +393,11 @@
             -webkit-mask-size: 100% 100%;
             mask-size: 100% 100%;
             /* kein Filter — Designerfoto mit transparentem Hintergrund */
+        }
+        @media (min-width: 1440px) {
+            .hero-photo-wrap img {
+                max-height: min(60vh, 30rem);
+            }
         }
         /* Halbtransparenter Schleier (kein Farb-Filter am Pixelbild) */
         .hero-photo-overlay {
