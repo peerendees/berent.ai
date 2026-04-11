@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://berent.ai/sitemap.xml
+Sitemap: https://www.berent.ai/sitemap-index.xml
