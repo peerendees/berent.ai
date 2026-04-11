@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hedy Experience Sprint – Workshop | BERENT.AI</title>
+<style>
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/bebas-neue-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/bebas-neue-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url(assets/fonts/lora-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 300 600;
+  font-display: swap;
+  src: url(assets/fonts/lora-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(assets/fonts/jetbrains-mono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url(assets/fonts/jetbrains-mono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg: #090806;
+  --card: #110e0a;
+  --border: #2a2118;
+  --copper: #B5742A;
+  --gold: #E8C98A;
+  --text: #C4BCB1;
+  --muted: #7A6A58;
+  --muted2: #9a8870;
+}
+
+:root[data-theme="light"] {
+  --bg: #F5EFE4;
+  --card: #FFFFFF;
+  --border: #E0D5C5;
+  --text: #2A1A08;
+  --muted: #7A6A58;
+  --muted2: #7A6A58;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lora', serif;
+  font-weight: 300;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(9, 8, 6, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-brand span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: var(--muted2);
+}
+
+.plus-mark {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+.plus-mark::before,
+.plus-mark::after {
+  content: '';
+  position: absolute;
+  background: var(--gold);
+  border-radius: 1px;
+}
+.plus-mark::before { width: 2px; height: 100%; left: 50%; top: 0; transform: translateX(-50%); }
+.plus-mark::after { width: 100%; height: 2px; top: 50%; left: 0; transform: translateY(-50%); }
+
+.nav-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--bg);
+  background: var(--copper);
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: background 0.3s;
+}
+.nav-cta:hover { background: #c9863a; }
+
+.theme-toggle {
+  background: #141417;
+  border: 1px solid var(--border);
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--copper);
+  color: var(--copper);
+  background: #1a1a1f;
+}
+:root[data-theme="light"] .theme-toggle {
+  background: #ece5d8;
+}
+:root[data-theme="light"] .theme-toggle:hover {
+  background: #e0d8c9;
+}
+.theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+.theme-toggle .hidden {
+  display: none;
+}
+
+:root[data-theme="light"] nav {
+  background: rgba(245, 239, 228, 0.92);
+}
+
+/* Sections */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.section-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--copper);
+  margin-bottom: 2rem;
+}
+
+/* Vertical accent line */
+.accent-border {
+  border-left: 2px solid var(--copper);
+  padding-left: 2rem;
+}
+
+.accent-border-gold {
+  border-left: 2px solid var(--gold);
+  padding-left: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+/* Hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  color: var(--copper);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.hero-sub {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--muted2);
+  letter-spacing: 0.06em;
+  margin-bottom: 2.5rem;
+}
+
+.hero-meta span {
+  color: var(--muted);
+}
+
+.cta-button {
+  display: inline-block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--bg);
+  background: var(--copper);
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  transition: all 0.3s;
+  border: 2px solid var(--copper);
+}
+.cta-button:hover {
+  background: transparent;
+  color: var(--copper);
+}
+
+/* Content Sections */
+.section-heading {
+  font-size: 2.2rem;
+  color: var(--copper);
+  margin-bottom: 1.5rem;
+}
+
+.section-text {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Problem */
+.problem-headline {
+  font-size: 2.5rem;
+  color: var(--copper);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+/* Session Cards */
+.session-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.session-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--copper);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.session-title {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.session-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Details Grid */
+.details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.detail-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+}
+
+.detail-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.detail-value {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.detail-value.price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--copper);
+  letter-spacing: 0.04em;
+}
+
+.price-note {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+/* Trust Signals */
+.trust-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.trust-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.trust-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  color: var(--copper);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+.trust-text {
+  font-size: 0.95rem;
+}
+
+/* About */
+.about-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.about-badge {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border: 2px solid var(--copper);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.65rem;
+  color: var(--copper);
+  text-align: center;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  padding: 0.5rem;
+}
+
+/* Audience */
+.audience-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.audience-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted2);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 6rem 2rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.cta-headline {
+  font-size: 1.6rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+}
+
+.faq-question {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  color: var(--copper);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.7rem;
+}
+
+.faq-answer {
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+/* Footer */
+footer {
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-brand span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1rem;
+  color: var(--muted2);
+  letter-spacing: 0.08em;
+}
+
+.footer-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.footer-links a {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--muted2);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--copper); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .hero h1 { font-size: 2.5rem; }
+  .details-grid { grid-template-columns: 1fr; }
+  .about-content { flex-direction: column; }
+  section { padding: 3rem 1.5rem; }
+  nav { padding: 1rem 1.2rem; }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 { animation: fadeUp 0.8s ease-out; }
+.hero-sub { animation: fadeUp 0.8s ease-out 0.15s both; }
+.hero-meta { animation: fadeUp 0.8s ease-out 0.3s both; }
+.hero .cta-button { animation: fadeUp 0.8s ease-out 0.45s both; }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+  <a href="https://berent.ai" class="nav-brand" aria-label="BERENT.AI">
+    <div class="plus-mark"></div>
+    <span>BERENT.AI</span>
+  </a>
+  <div style="display:flex;align-items:center;gap:0.8rem;">
+    <a href="#buchen" class="nav-cta">Platz sichern</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Farbschema wechseln">
+      <svg class="icon-moon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646Z"/></svg>
+      <svg class="icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Block 1: Hero -->
+<section class="hero">
+  <h1>Hedy<br>Experience<br>Sprint</h1>
+  <p class="hero-sub">Lerne, Hedy so einzurichten, dass es in Deinem Arbeitsalltag verschwindet – und trotzdem alles Wichtige festhält.</p>
+  <p class="hero-meta">28.–29. April 2026 <span>·</span> Online <span>·</span> 2×90 Minuten</p>
+  <a href="#buchen" class="cta-button">Jetzt Platz sichern</a>
+</section>
+
+<!-- Block 2: Problem -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="problem-headline">Deine Gespräche sind wertvoll.<br>Deine Nachbereitung nicht.</h2>
+  <div class="accent-border">
+  <p class="section-text">Du führst Coaching-Sessions, Beratungsgespräche, Strategie-Meetings – und danach? Hektische Notizen, halbe Erinnerungen, verlorene Details. Oder Du investierst nochmals 60 Minuten pro Gespräch in die Dokumentation – bei Gruppen-Meetings auch mal 90 Minuten, die sich anfühlen wie das Meeting selbst.</p>
+  </div>
+</section>
+
+<!-- Block 3: Lösung -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Was wäre, würde Dein Assistent einfach zuhören… und mitdenken?</h2>
+  <div class="accent-border">
+  <p class="section-text">Ambient AI arbeitet im Hintergrund: verfügbar bei Bedarf, still wenn nicht benötigt, beobachtbar und kontrollierbar. Hedy ist genau das: ein KI-Assistent, der in Echtzeit mitdenkt, während Du Dich auf Dein Gegenüber konzentrierst. Keine nachträgliche Transkription. Keine Nacharbeit. Sondern Unterstützung im Moment, in dem sie zählt.</p>
+  </div>
+</section>
+
+<!-- Block 4: Workshop-Inhalt -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Was Dich erwartet</h2>
+  
+  <div class="session-card">
+    <p class="session-label">Session 1</p>
+    <h3 class="session-title">Hedy verstehen</h3>
+    <p class="session-text">Du erfährst, wie Hedy in Echtzeit mitdenkt und wie Du Deine Gespräche so vorbereitest, dass die Vorschläge sofort nützlich sind. Wir schauen uns u.&nbsp;a. an: Sitzungs- und Themenkontext richtig einrichten, Session-Typen und ihre Einsatzgebiete, Live-Demo der Echtzeit-Vorschläge.</p>
+  </div>
+  
+  <div class="session-card">
+    <p class="session-label">Session 2</p>
+    <h3 class="session-title">Hedy meistern</h3>
+    <p class="session-text">Du lernst, wie Du Hedy über einzelne Gespräche hinaus nutzt und die Erkenntnisse direkt weiterverarbeitest. Wir schauen uns u.&nbsp;a. an: Themen für Mustererkennung über mehrere Gespräche, Hedy-Daten in Claude nutzen (MCP), Highlights und Zusammenfassungen weiterverarbeiten.</p>
+  </div>
+</section>
+
+<!-- Block 5: Für wen -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Für wen ist dieser Workshop?</h2>
+  <div class="accent-border">
+  <p class="section-text">Für Selbstständige und Professionals, die regelmäßig wichtige Gespräche führen. Du nutzt bereits KI-Tools und willst Hedy gezielt in Deinen Arbeitsalltag integrieren – nicht als weiteres Tool, sondern als Assistent, der im Hintergrund mitläuft.</p>
+  </div>
+  <div class="audience-tags">
+    <span class="audience-tag">Coaches</span>
+    <span class="audience-tag">Berater</span>
+    <span class="audience-tag">Führungskräfte</span>
+    <span class="audience-tag">Projektleiter</span>
+  </div>
+</section>
+
+<!-- Block 6: Über mich -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Wer Dich begleitet</h2>
+  <div class="about-content accent-border">
+    <div class="about-badge">Zertifizierter<br>Hedy<br>Trainer</div>
+    <p class="section-text">Marcus Kunkel – Softwareentwickler, systemischer Coach und einer der ersten 25 zertifizierten Hedy-Trainer weltweit. Ich bringe zusammen, was selten in einer Person steckt: technische Tiefe, didaktische Kompetenz und ein systemisches Verständnis dafür, wie Technologie in bestehende Arbeitsweisen passt – ohne sie zu überstülpen.</p>
+  </div>
+</section>
+
+<!-- Block 7: Details -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Auf einen Blick</h2>
+  <div class="details-grid">
+    <div class="detail-item">
+      <p class="detail-label">Termin</p>
+      <p class="detail-value">28.–29. April 2026<br>Di–Mi, 18:45 Uhr</p>
+    </div>
+    <div class="detail-item">
+      <p class="detail-label">Format</p>
+      <p class="detail-value">2×90 Minuten<br>Online via Zoom</p>
+    </div>
+    <div class="detail-item">
+      <p class="detail-label">Gruppengröße</p>
+      <p class="detail-value">Max. 10 Teilnehmer</p>
+    </div>
+    <div class="detail-item">
+      <p class="detail-label">Preis</p>
+      <p class="detail-value price">149,00 €</p>
+      <p class="price-note">zzgl. 19 % MwSt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Block 8: Vertrauenssignale -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Gut zu wissen</h2>
+  
+  <div class="trust-item">
+    <div class="plus-mark" style="margin-top: 0.35rem;"></div>
+    <div>
+      <p class="trust-label">EU-Datenhaltung</p>
+      <p class="trust-text">Hedy Version 3 bietet die Möglichkeit, Daten ausschließlich auf EU-Servern zu verarbeiten – DSGVO-konform.</p>
+    </div>
+  </div>
+  
+  <div class="trust-item">
+    <div class="plus-mark" style="margin-top: 0.35rem;"></div>
+    <div>
+      <p class="trust-label">Kleine Gruppe</p>
+      <p class="trust-text">Maximal 10 Teilnehmer garantieren individuellen Austausch und persönliche Betreuung.</p>
+    </div>
+  </div>
+  
+  <div class="trust-item">
+    <div class="plus-mark" style="margin-top: 0.35rem;"></div>
+    <div>
+      <p class="trust-label">Aufzeichnung</p>
+      <p class="trust-text">Du erhältst die Workshop-Aufzeichnung im Anschluss, falls Du eine Session verpasst.</p>
+    </div>
+  </div>
+  
+  <div class="trust-item">
+    <div class="plus-mark" style="margin-top: 0.35rem;"></div>
+    <div>
+      <p class="trust-label">Praxisorientiert</p>
+      <p class="trust-text">Keine Frontalpräsentation – Du arbeitest im Workshop direkt mit Hedy an Deinen eigenen Anwendungsfällen.</p>
+    </div>
+  </div>
+  
+  <div class="trust-item">
+    <div class="plus-mark" style="margin-top: 0.35rem;"></div>
+    <div>
+      <p class="trust-label">Geld-zurück-Garantie</p>
+      <p class="trust-text">Du bekommst Dein Geld zurück – ohne Wenn und Aber.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Block 9: CTA -->
+<section class="cta-section" id="buchen">
+  <p class="cta-headline">Lediglich 10 Plätze. Sichere Dir Deinen jetzt.</p>
+  <a href="#" class="cta-button">Jetzt Platz sichern</a>
+</section>
+
+<!-- Block 10: FAQ -->
+<section>
+  <div class="section-divider"></div>
+  <h2 class="section-heading">Häufige Fragen</h2>
+  
+  <div class="faq-item">
+    <p class="faq-question">Muss ich Hedy bereits installiert haben?</p>
+    <p class="faq-answer">Ja, bitte installiere Hedy Version 3.1.0 vor dem Workshop auf Deinem Desktop-Rechner (Mac oder Windows). Du erhältst nach der Buchung eine Anleitung zur Vorbereitung.</p>
+  </div>
+  
+  <div class="faq-item">
+    <p class="faq-question">Brauche ich einen Hedy Pro Account?</p>
+    <p class="faq-answer">Nein. Der kostenlose Account reicht für den Workshop. Ob sich Pro für Dich lohnt, wirst Du im Workshop selbst herausfinden.</p>
+  </div>
+  
+  <div class="faq-item">
+    <p class="faq-question">Was, wenn ich an einem der beiden Tage nicht kann?</p>
+    <p class="faq-answer">Du erhältst die Aufzeichnung im Anschluss an jede Session und kannst am zweiten Tag dennoch teilnehmen.</p>
+  </div>
+  
+  <div class="faq-item">
+    <p class="faq-question">Was, wenn mir der Workshop nicht zusagt?</p>
+    <p class="faq-answer">Du bekommst Dein Geld zurück – ohne Wenn und Aber.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">
+    <div class="plus-mark"></div>
+    <span>BERENT</span>
+  </div>
+  <p class="footer-meta">Hedy Experience Sprint · workshop.berent.ai</p>
+  <div class="footer-links">
+    <a href="https://berent.ai/impressum.html">Impressum</a>
+    <a href="https://berent.ai">Zurück zur Hauptseite</a>
+  </div>
+</footer>
+
+<script>
+const THEME_STORAGE_KEY = 'berent-theme';
+const root = document.documentElement;
+const toggle = document.getElementById('theme-toggle');
+const moonIcon = document.querySelector('.icon-moon');
+const sunIcon = document.querySelector('.icon-sun');
+
+function resolveInitialTheme() {
+  const saved = localStorage.getItem(THEME_STORAGE_KEY);
+  if (saved === 'light' || saved === 'dark') return saved;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  const isLight = theme === 'light';
+  if (moonIcon) moonIcon.classList.toggle('hidden', !isLight);
+  if (sunIcon) sunIcon.classList.toggle('hidden', isLight);
+}
+
+applyTheme(resolveInitialTheme());
+
+if (toggle) {
+  toggle.addEventListener('click', () => {
+    const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = current === 'light' ? 'dark' : 'light';
+    localStorage.setItem(THEME_STORAGE_KEY, next);
+    applyTheme(next);
+  });
+}
+</script>
+</body>
+</html>
