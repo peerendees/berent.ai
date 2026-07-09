@@ -254,39 +254,36 @@
             overflow-x: visible;
             -webkit-overflow-scrolling: touch;
         }
-        .hero-title-line {
+        /* Hero-Wertversprechen: Lora, natürlicher Umbruch, Farbdramaturgie text → copper → gold */
+        .hero-value-line {
             display: block;
-            white-space: nowrap;
-            font-size: clamp(1.85rem, 5.5vw, 5.5rem);
-            line-height: 1.05;
-            color: var(--copper);
-            font-family: 'Bebas Neue', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
+            font-family: 'Lora', Georgia, serif;
+            white-space: normal;
+            overflow-wrap: break-word;
         }
-        .hero-title-line--beat {
-            margin-top: 0.06em;
+        .hero-value-line--claim {
+            color: var(--text);
+            font-weight: 400;
+            font-size: clamp(1.35rem, 3.4vw, 2.75rem);
+            line-height: 1.25;
         }
-        .hero-title-line--desktop {
-            display: none;
+        .hero-value-line--copper {
+            color: var(--copper-lt);
+            font-weight: 500;
+            font-size: clamp(1.2rem, 3vw, 2.4rem);
+            line-height: 1.3;
+            margin-top: 0.5em;
+        }
+        .hero-value-line--punch {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: clamp(1.3rem, 3.2vw, 2.6rem);
+            line-height: 1.2;
+            margin-top: 0.35em;
         }
         @media (min-width: 640px) {
-            .hero-title-line--desktop {
-                display: block;
-            }
-            .hero-title-line--mobile {
-                display: none;
-            }
-        }
-        @media (min-width: 640px) {
-            .hero-title-line {
-                white-space: nowrap;
-                font-size: clamp(2.25rem, 6.5vw, 6rem);
-            }
-        }
-        @media (min-width: 1024px) {
-            .hero-title-line {
-                font-size: clamp(2.75rem, 7vw, 6.25rem);
+            .hero-value-line--punch {
+                text-align: right;
             }
         }
         .footer-landing {
@@ -362,25 +359,18 @@
                 padding-top: 0;
                 padding-bottom: 0.125rem;
             }
-            .hero-title-line {
-                white-space: normal;
-                overflow-wrap: break-word;
-                font-size: clamp(1.35rem, 6.2vw, 2.15rem);
-                line-height: 1.06;
+            .hero-value-line--claim {
+                font-size: clamp(1.3rem, 6vw, 1.7rem);
+                line-height: 1.3;
             }
-            .hero-title-line--split {
-                line-height: 1.08;
-                font-size: clamp(1.35rem, 6.2vw, 2.15rem);
+            .hero-value-line--copper {
+                font-size: clamp(1.15rem, 5.4vw, 1.5rem);
             }
-            .hero-title-line--beat {
-                margin-top: 0.04em;
+            .hero-value-line--punch {
+                font-size: clamp(1.2rem, 5.6vw, 1.6rem);
             }
             .hero-copy-col {
                 gap: 0.55rem;
-            }
-            .hero-subtitle {
-                font-size: clamp(0.85rem, 3.2vw, 1rem) !important;
-                line-height: 1.45 !important;
             }
             .hero-hedy-badge {
                 padding: 8px 12px !important;
@@ -425,15 +415,17 @@
                 padding-top: 0.5rem;
                 padding-bottom: 0.25rem;
             }
-            .hero-title-line {
-                font-size: clamp(1.5rem, 3.6vw, 3.35rem) !important;
-                line-height: 1.04;
+            .hero-value-line--claim {
+                font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+            }
+            .hero-value-line--copper {
+                font-size: clamp(1.15rem, 2.3vw, 1.7rem);
+            }
+            .hero-value-line--punch {
+                font-size: clamp(1.25rem, 2.5vw, 1.8rem);
             }
             .hero-copy-col {
                 gap: clamp(0.85rem, 2vw, 1.35rem);
-            }
-            .hero-subtitle {
-                font-size: clamp(0.9rem, 1.8vw, 1.1rem) !important;
             }
             .hero-hedy-badge {
                 padding: 8px 14px !important;
@@ -609,15 +601,10 @@
             <div class="hero-main-row">
                 <div class="hero-copy-col min-w-0 flex-1 pb-0 sm:pb-1">
                     <h1 class="hero-headline">
-                        <span class="hero-animate hero-title-line hero-title-line--desktop">ICH GESTALTE MEINE WEBSEITE</span>
-                        <span class="hero-animate hero-title-line hero-title-line--mobile">ICH GESTALTE</span>
-                        <span class="hero-animate hero-title-line hero-title-line--mobile">MEINE WEBSEITE</span>
-                        <span class="hero-animate hero-title-line hero-title-line--beat">NEU...</span>
-                        <span class="hero-animate hero-title-line mt-0 sm:mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
+                        <span class="hero-animate hero-value-line hero-value-line--claim">End-to-End-Prozesse im Mittelstand KI-optimiert spart 6-stellig, wenn man es richtig macht.</span>
+                        <span class="hero-animate hero-value-line hero-value-line--copper">Weniger Nacharbeiten, Nachfassen, Nachliefern.</span>
+                        <span class="hero-animate hero-value-line hero-value-line--punch">Mehr Kunde.</span>
                     </h1>
-                    <p class="hero-animate hero-subtitle font-light leading-relaxed" style="font-family:'Lora',serif; color:var(--text); font-size:clamp(1rem,2.5vw,1.25rem);">
-                        Implementierungspartner für KI im Customer Support des Mittelstands
-                    </p>
                     <div class="hero-badge-fade hero-hedy-badge max-w-lg" style="background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:12px 20px;">
                         <p class="hero-hedy-badge-line1" style="font-family:'Lora',serif; color:var(--text); font-size:14px; margin:0;">Einer der weltweit 25 ersten Hedy-Trainer</p>
                         <p class="hero-hedy-badge-line2" style="font-family:'Lora',serif; color:var(--text-muted); font-size:12px; margin:4px 0 0 0;">Erste Trainingsgruppe am Koerting Institute · Hedy AI</p>
@@ -650,6 +637,20 @@
             </div>
         </section>
     </div>
+
+    <!-- Positionierung -->
+    <section class="py-16 md:py-20" style="background:var(--bg);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p style="font-family:'Lora',serif; color:var(--text); font-size:clamp(1.05rem,2vw,1.3rem); line-height:1.7; font-weight:300;">
+                Ich helfe Mittelständlern in (Groß-)Handel und Produktion, die Aufträge verlieren, weil sie bei Angebot, Bestellung und Lieferung zu langsam sind, indem ich mit KI die Abläufe so umbaue, damit Deine Leute wieder beim Kunden sind anstatt in der Verwaltung.
+            </p>
+            <div class="rounded-r-lg border-l-4 p-5 pl-6 mt-8" style="background:var(--bg2); border-color:var(--copper);">
+                <p style="font-family:'Lora',serif; color:var(--text); font-size:clamp(1rem,1.8vw,1.15rem); line-height:1.7; margin:0;">
+                    <span style="color:var(--copper);">Was mich dabei unterscheidet:</span> Ich spreche die Sprache der Mitarbeiter und die der Technik. Deshalb wird die neue Lösung auch tatsächlich genutzt, nicht nur installiert.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Leistungs-Teaser -->
     <section class="py-16 md:py-20" style="background:var(--bg);">
