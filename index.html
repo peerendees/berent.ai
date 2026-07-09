@@ -267,6 +267,17 @@
         .hero-title-line--beat {
             margin-top: 0.06em;
         }
+        .hero-title-line--desktop {
+            display: none;
+        }
+        @media (min-width: 640px) {
+            .hero-title-line--desktop {
+                display: block;
+            }
+            .hero-title-line--mobile {
+                display: none;
+            }
+        }
         @media (min-width: 640px) {
             .hero-title-line {
                 white-space: nowrap;
@@ -598,9 +609,9 @@
             <div class="hero-main-row">
                 <div class="hero-copy-col min-w-0 flex-1 pb-0 sm:pb-1">
                     <h1 class="hero-headline">
-                        <span class="hero-animate hero-title-line !hidden sm:!block">ICH GESTALTE MEINE WEBSEITE</span>
-                        <span class="hero-animate hero-title-line !block sm:!hidden">ICH GESTALTE</span>
-                        <span class="hero-animate hero-title-line !block sm:!hidden">MEINE WEBSEITE</span>
+                        <span class="hero-animate hero-title-line hero-title-line--desktop">ICH GESTALTE MEINE WEBSEITE</span>
+                        <span class="hero-animate hero-title-line hero-title-line--mobile">ICH GESTALTE</span>
+                        <span class="hero-animate hero-title-line hero-title-line--mobile">MEINE WEBSEITE</span>
                         <span class="hero-animate hero-title-line hero-title-line--beat">NEU...</span>
                         <span class="hero-animate hero-title-line mt-0 sm:mt-[0.08em]">UND DEIN UNTERNEHMEN.</span>
                     </h1>
@@ -685,6 +696,33 @@
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- Partner am Koerting Institute -->
+    <section class="py-12 md:py-16" style="background:var(--bg);">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <a href="https://website.koerting.ai/experten/"
+               target="_blank" rel="noopener noreferrer"
+               class="card flex flex-col sm:flex-row gap-6 sm:gap-8 items-center sm:items-start hover:scale-[1.01] transition-transform no-underline">
+                <img src="images/marcus-kunkel-profil.webp"
+                     alt="Marcus Kunkel — Partner am Koerting Institute"
+                     class="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover flex-shrink-0"
+                     style="border: 2px solid var(--copper);"
+                     loading="lazy" width="160" height="160">
+                <div class="text-center sm:text-left">
+                    <p class="mb-2 text-xs uppercase tracking-wider" style="font-family:'JetBrains Mono',monospace; color:var(--copper); letter-spacing:0.08em;">
+                        Partner am Koerting Institute
+                    </p>
+                    <h3 class="mb-3" style="font-family:'Bebas Neue',sans-serif; color:var(--copper); font-size:clamp(1.25rem,2.5vw,1.75rem); letter-spacing:0.04em; line-height:1.1;">
+                        ICH BRINGE KI ZUM LAUFEN UND MENSCHEN ZUM MITMACHEN.
+                    </h3>
+                    <p class="mb-4 font-light leading-relaxed" style="font-family:'Lora',serif; color:var(--text-muted); font-size:0.95rem;">
+                        Im Koerting Institute verbinde ich KI-Strategie mit Umsetzung im Mittelstand — damit neue Lösungen nicht nur installiert, sondern tatsächlich genutzt werden.
+                    </p>
+                    <span class="font-medium" style="font-family:'Lora',serif; color:var(--copper);">Expertenprofil ansehen →</span>
+                </div>
+            </a>
         </div>
     </section>
 
