@@ -1,4 +1,4 @@
-const CACHE_NAME = 'berent-static-cache-v3'; // Koerting-Partner-Profilbild hinzugefügt
+const CACHE_NAME = 'berent-static-cache-v2'; // Version geändert: Bilder auf WebP umgestellt
 const FILES_TO_CACHE = [
   // HTML-Seiten
   'index.html',
@@ -16,7 +16,6 @@ const FILES_TO_CACHE = [
   'images/logo-kompakt-farbe.webp',
   'images/hintergrund.webp',
   'images/hintergrund-footer.webp',
-  'images/marcus-kunkel-profil.webp',
   'images/kunden-hintergrund.jpg', // kein WebP vorhanden, Referenz unverändert
   'customer-logos/logo-nachtwaechter.png',
   'customer-logos/h-pcn.png',
