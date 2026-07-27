@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/faq/github", "destination": "https://faq.berent.ai/github", "permanent": true },
+    { "source": "/faq", "destination": "https://faq.berent.ai", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
