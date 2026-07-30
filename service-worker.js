@@ -1,4 +1,4 @@
-const CACHE_NAME = 'berent-static-cache-v13';
+const CACHE_NAME = 'berent-static-cache-v14';
 const FILES_TO_CACHE = [
   // HTML-Seiten
   'index.html',
