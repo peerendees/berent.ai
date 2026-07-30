@@ -1,16 +1,32 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/faq/github", "destination": "https://faq.berent.ai/github", "permanent": true },
-    { "source": "/faq", "destination": "https://faq.berent.ai", "permanent": true }
+    {
+      "source": "/faq/github",
+      "destination": "https://faq.berent.ai/github",
+      "permanent": true
+    },
+    {
+      "source": "/faq",
+      "destination": "https://faq.berent.ai",
+      "permanent": true
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
       ]
     }
   ]
